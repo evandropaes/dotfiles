@@ -49,7 +49,7 @@ Garanta que tudo esteja atualizado.
 
 ### 3. Instale os Dotfiles
 
-Vá até o [meu repositório Dotfiles ](https://github.com/evandropaes/dotfiles) e fork para o seu github. Isso é muito importante, pois você irá fazer modificações nesses arquivos e a ideia é que você guarde no seu github para quando precisar recuperar.
+Vá até o [meu repositório Dotfiles](https://github.com/evandropaes/dotfiles) e fork para o seu github. Isso é muito importante, pois você irá fazer modificações nesses arquivos e a ideia é que você guarde no seu github para quando precisar recuperar.
 
 Clone o repositório para o direto ~/.dotfiles
 
@@ -78,14 +78,14 @@ chown -R ($whoami) /usr/local
 
 Há 2 scripts dentro do repositório para realizar as instalações dos softwares, são eles:
 
-* brew.sh
-* brew-cask.sh
+* scripts/brew.sh
+* scripts/brew-cask.sh
 
 Execute cada um deles separadamente
 
 ```sh
-./brew.sh
-./brew-cask.sh
+./scripts/brew.sh
+./scripts/brew-cask.sh
 ```
 
 #### O que está incluso?
@@ -208,7 +208,7 @@ git config --global user.email (seu e-mail)
 Eu me inspirei no dotfiles do Victor Cavalcante, que por sua vez se inspirou no PaulIrish, que se inspirou no mathias. A ideia é ter um script que set todas as configurações que você gosta do Mac. Tem de tudo nesse arquivo. Eu ajustei para as minhas necessidades e você deve olhar e arrumar para as suas.
 
 ```sh
-sh ~/.dotfiles/.osx
+sh ~/.dotfiles/scripts/configmacos.sh
 ```
 
 ### 8. Configure o shell padrão para o ZSH e instale o OH-My-ZSH
@@ -245,7 +245,7 @@ Para finalizar a configuração do terminal é necessário linkar os dotfiles qu
 
 ```sh
 cd ~/.dotfiles
-~/.dotfiles/symlink-setup.sh
+~/.dotfiles/scripts/symlink-setup.sh
 ```
 
 Após realizar essa configuração deverá fechar o iTerm2 e abrir novamente. Seu terminal deve estar como a imagem abaixo:
@@ -266,7 +266,7 @@ Visite [minha coleção de workflows do Alfred](https://github.com/vcavalcante/a
 ### 11. Configure o usuário do [NPM](http://npmjs.org)
 
 ```sh
-npm adduser vcavalcante
+npm adduser evandropaes
 ```
 
 ### 12. Trabalhe feliz!
