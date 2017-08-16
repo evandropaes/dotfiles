@@ -184,7 +184,7 @@ Execute cada um deles separadamente
 npm install --global trash-cli
 ```
 
-[z](github.com/rupa/z) isso é mágico, ahhh como eu <3 o z
+[z](https://github.com/rupa/z). Um "cd" turbinado por um pouquinho de machine learning... <3able!
 
 ```sh
 git clone https://github.com/rupa/z.git ~/code/z
