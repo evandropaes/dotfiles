@@ -85,26 +85,6 @@ O setup.sh irá:
   [`macOS`](scripts/os/preferences/macos) /
   [`Ubuntu`](scripts/os/preferences/ubuntu) 
 
-O processo sendo executado (ainda com as telas do Cătălin. Breve mudo):
-
-<table>
-    <tbody>
-        <tr>
-            <td>
-                <img scripts="https://cloud.githubusercontent.com/assets/1223565/19314446/cd89a592-90a2-11e6-948d-9d75247088ba.gif" alt="Setup process on Ubuntu" width="100%">
-            </td>
-            <td>
-                <img scripts="https://cloud.githubusercontent.com/assets/1223565/19048636/e23e347a-89af-11e6-853c-98616b75b6ae.gif" alt="Setup process on Ubuntu" width="100%">
-            </td>
-        </tr>
-        <tr align="center">
-            <td>macOS</td>
-            <td>Ubuntu</td>
-        </td>
-    </tbody>
-</table>
-
-
 ## Personalizando
 
 ### Configurações Locais
@@ -140,7 +120,7 @@ export PATH
 
 O arquivo `~/.gitconfig.local` será automaticamente incluído após as configurações de `~/.gitconfig`, permitindo que seu conteúdo sobrescreva ou adicione as configurações existentes `git`.
 
-__Nota: __ Use `~/.gitconfig.local` para armazenar informações confidenciais, como as credenciais de usuários `git`, por exemplo:
+__Nota:__ Use `~/.gitconfig.local` para armazenar informações confidenciais, como as credenciais de usuários `git`, por exemplo:
 
 ```bash
 [commit]
@@ -160,15 +140,15 @@ __Nota: __ Use `~/.gitconfig.local` para armazenar informações confidenciais, 
 
 ### Forks
 
-Se você decidir forkar este projeto, não se esqueça de substituir meu nome de usuário com o seu próprio no [`setup`] (#setup) e no` setup`script.
+Se você decidir forkar este projeto, não se esqueça de substituir meu nome de usuário com o seu próprio no [`setup`](#setup) e no `setup` script.
 
 ## Atualizações
 
-Para atualizar os dotfiles, você pode executar o script [`setup`] (scripts/os/setup.sh) ou, se você quiser apenas atualizar uma parte específica, execute o script apropriado [`os`] (scripts/os).
+Para atualizar os dotfiles, você pode executar o script [`setup`](scripts/os/setup.sh) ou, se você quiser apenas atualizar uma parte específica, execute o script apropriado [`os`](scripts/os).
 
 ## Licença
 
-O código está disponível sob a licença [licença MIT] (LICENSE.txt).
+O código está disponível sob a [licença MIT](LICENSE.txt).
 
 ## Trabalhe feliz!
 
