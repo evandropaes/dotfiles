@@ -1,25 +1,26 @@
 **Work-In-Progress (Beta)** 
 
-# Evandro Reis (RedPill.digital) .dotfiles e config scripts para macOS 
+# Evandro Reis (RedPill.digital) Dotfiles (macOS e Ubuntu) [![Build Status]](https://travis-ci.org/evandropaes/dotfiles)
 
-Antes de mais nada, aqui ficam meus agradecimentos ao [Victor Cavalcante](https://github.com/vcavalcante/) (grande amigo da Lambda3) que indicou-me seu tutorial de .dotfiles. Estou baseando muito das configurações que seguem aqui no trabalho inicial dele. Valeu, brother. 
+Antes de mais nada, aqui ficam meus agradecimentos ao [Victor Cavalcante](https://github.com/vcavalcante/) (grande amigo da Lambda3) que apresentou-me o conceito de Dotfiles e indicou-me seu tutorial de .dotfiles. Valeu, brother. Agradecimentos também ao [Cătălin Mariș](https://github.com/alrra) pelos scrips e complementos. Estou baseando muito das configurações que seguem aqui no trabalho inicial dele. 
 
-**AVISO:** Se você quiser usar esses dotfiles e scripts de configuração, primeiro faça um fork com o comando abaixo: 
+:warning: **AVISO:** Se você quiser usar esses dotfiles e scripts de configuração, primeiro faça um fork com o comando abaixo. **NÃO** os use sem saber o que está fazendo.  
 
 ```bash
 git clone https://github.com/evandropaes/dotfiles.git ~/.dotfiles
 ```
-Depois revise o código e remova tudo aquilo que você ache desnecessário. Não tente usar cegamente as configurações se você não sabe o que está fazendo. Use por sua conta e risco!
+Depois revise o código e remova tudo aquilo que você ache desnecessário. Não tente usar cegamente as configurações se você não sabe o que está fazendo. Use por sua conta e risco! É importante mudar alguns scripts para refletirem seu ambiente (como, por exemplo, seu username).
 
-Eu mantenho este repositório como *meu* dotfiles, mas você pode usar como se fosse seu. :)
-Fique a vontade em mandar sugestões, correções e esculachos, mas só vou aceitar os não ofensivos e os pull requests se realmente tiver valor. 
+Os arquivos locais (.local) servem para você alterar as configurações sem precisar mexer no core dos Dotfiles.
+
+Fique à vontade em mandar sugestões, correções e esculachos, mas só vou aceitar os não ofensivos e os pull requests se realmente tiver valor. 
 
 # Setup
 #### Instalação e uso
 
-* Forque este repositório por sua conta e risco (que medo)
+* Fork este repositório por sua conta e risco (que medo)
 * Clone o repositório
-* *Leia* o manual abaixo de como faço o meu Setup
+* *Leia* com atenção os passos abaixo
 * Be happy :)
 * Don't blame me se algo der errado. 
 
@@ -29,9 +30,10 @@ Dotfiles nada mais são do que arquivos que começam com ".", por isso o nome, a
 
 A ideia é que você possa guardar esses arquivos e restaurar na sua nova máquina e vai ter de volta as configurações que você já estava acostumado, mas os Dotfiles sozinhos não fazem mágica, por isso escrevi esse manual. Além deles vamos usar scripts shell para automatizar algumas coisas, brew para instalar software, e outras coisinhas a mais.
 
-## Passo-a-passo for newbies
+# macOS
+## Passo-a-passo for newbies (macOS)
 
-### 1. Atualize seu macOS X
+### 1. Atualize o macOS  
 
 Garanta que tudo esteja atualizado.
 
@@ -47,7 +49,7 @@ Garanta que tudo esteja atualizado.
   xcode-select --install
 ```
 
-### 3. Instale os Dotfiles
+### 3. Clone o repositório Git
 
 Vá até o [meu repositório Dotfiles](https://github.com/evandropaes/dotfiles) e fork para o seu github. Isso é muito importante, pois você irá fazer modificações nesses arquivos e a ideia é que você guarde no seu github para quando precisar recuperar.
 
@@ -57,219 +59,119 @@ Clone o repositório para o direto ~/.dotfiles
 git clone https://github.com/evandropaes/dotfiles.git ~/.dotfiles
 ```
 
-Agora temos todos os arquivos necessários no Mac mas ainda não está no lugar correto. Agora precisamos criar um link simbolico (symlink) desses arquivos que estão no .dotfiles para a raiz do seu usuário (~/). Assim podemos manter esses arquivos separados em um diretório que está dentro do repositório git.
+### 4. Executando o setup.sh
 
-Mas antes vamos instalar algumas coisas:
+Para configurar os `Dotfiles`, execute o snippet apropriado no terminal:
 
-### 4. Instalando os Softwares
+(:warning: **NÃO** execute o "setup.sh" se você não entender completamente o que ele faz] (scripts/os/setup.sh). Sério, **NÃO EXECUTE**!)
 
-Tento instalar tudo via Homebrew ou Brew Cask, enquanto o [Homebrew project](http://brew.sh/) é um projeto que foi desenvolvido para gerenciar pacotes para o macOS, o Brew Cask é uma extensão desse mesmo projeto que permite instalação de aplicações gráficas (*.app), como Browsers, IDEs e tudo mais.
+| OS | Snippet |
+|:---|:---|
+| `macOS` | `bash -c "$(curl -LsS https://raw.github.com/evandropaes/dotfiles/master/scripts/os/setup.sh)"` |
+| `Ubuntu` | `bash -c "$(wget -qO - https://raw.github.com/alrra/evandropaes/master/scripts/os/setup.sh)"` |
 
-Primeiro verifique se o brew já está instalado se não estiver, instale:
+Só isso! :sparkles:
 
-```sh
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-Se por acaso você encontrar um erro de permissão nas instalações, execute: 
+O setup.sh irá: 
 
-```sh
-chown -R ($whoami) /usr/local
-```
+* Download the dotfiles on your computer (by default it will suggest   `~/Projects/Dotfiles`)
+* Criar os diretórios [directories](scripts/os/create_directories.sh)
+* [Symlink](scripts/os/create_symbolic_links.sh) the 
+  [`git`](scripts/git),
+  [`shell`](scripts/shell), and
+* Instalas as aplicações e ferramentos de linha de comando para 
+  [`macOS`](scripts/os/install/macos) /
+  [`Ubuntu`](scripts/os/install/ubuntu)
+* Redefinir as preferências
+  [`macOS`](scripts/os/preferences/macos) /
+  [`Ubuntu`](scripts/os/preferences/ubuntu) 
 
-Há 2 scripts dentro do repositório para realizar as instalações dos softwares, são eles:
+O processo sendo executado (ainda com as telas do Cătălin. Breve mudo):
 
-* scripts/brew.sh
-* scripts/brew-cask.sh
-
-Execute cada um deles separadamente
-
-```sh
-./scripts/brew.sh
-./scripts/brew-cask.sh
-```
-
-#### O que está incluso?
-
-##### HomeBrew
-
-* [CoreUtils](https://pt.wikipedia.org/wiki/GNU_Core_Utilities)
-* [MoreUtils](https://joeyh.name/code/moreutils/)
-* [FindUtils](https://www.gnu.org/software/findutils/)
-* [Gnu-sed](https://www.gnu.org/software/sed/)
-* [Bash](https://www.gnu.org/software/bash/)
-* [grc](http://korpus.juls.savba.sk/~garabik/software/grc.html)
-* [wget](https://www.gnu.org/software/wget/)
-* [vim](http://www.vim.org/)
-* [grep](https://www.gnu.org/software/grep/)
-* [screen](https://www.gnu.org/software/screen)
-* [Entr](http://entrproject.org/)
-* [gh](https://github.com/jingweno/gh)
-* [mtr](https://www.bitwizard.nl/mtr/)
-* [sift](https://sift-tool.org/)
-* [git](https://git-scm.com/)
-* [imagemagick](https://www.imagemagick.org/script/index.php)
-* [node](https://nodejs.org/)
-* [pv](https://www.ivarch.com/programs/pv.shtml)
-* [rename](http://plasmasturm.org/code/rename/)
-* [tree](http://mama.indstate.edu/users/ice/tree/)
-* [zopfli](https://github.com/google/zopfli)
-* [ffmpeg](https://ffmpeg.org/)
-* [wifi-password](https://github.com/rauchg/wifi-password)
-* [terminal-notifier](https://github.com/julienXX/terminal-notifier)
-* [httpie](https://httpie.org/)
-* [Android-platform-tool](https://developer.android.com/sdk)
-* [pidcat](https://github.com/JakeWharton/pidcat)
-* [zsh](http://www.zsh.org/)
-* [fish](https://fishshell.com)
-* [nvm](https://github.com/creationix/nvm)
-* [dotnet](https://www.microsoft.com/net/core#macos)
-* [z](https://github.com/rupa/z)
-
-##### Brew Cask
-
-###### Uso diário
-
-* [spectacle](https://spectacleapp.com/)
-* [dropbox](http://dropbox.com)
-* [gyazo](https://gyazo.com/)
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <img scripts="https://cloud.githubusercontent.com/assets/1223565/19314446/cd89a592-90a2-11e6-948d-9d75247088ba.gif" alt="Setup process on Ubuntu" width="100%">
+            </td>
+            <td>
+                <img scripts="https://cloud.githubusercontent.com/assets/1223565/19048636/e23e347a-89af-11e6-853c-98616b75b6ae.gif" alt="Setup process on Ubuntu" width="100%">
+            </td>
+        </tr>
+        <tr align="center">
+            <td>macOS</td>
+            <td>Ubuntu</td>
+        </td>
+    </tbody>
+</table>
 
 
-###### Browser
+## Personalizando
 
-* [Firefox Aurora](http://www.mozilla.org/en-US/firefox/aurora/)
-* [Chrome](https://www.google.com/intl/en/chrome/browser/)
-* [Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html)
-* [Opera Next](http://www.opera.com/computer/next)
+### Configurações Locais
 
-###### Development
+Os `dotfiles` podem ser facilmente estendidos para atender aos requisitos locais adicionais usando os seguintes arquivos:
 
-* [Sublime Text](http://www.sublimetext.com/) 
-* [iTerm 2](http://www.iterm2.com/#/section/home) 
-* [Source Tree](http://www.sourcetreeapp.com/) 
-* [imagealpha](https://pngmini.com/)
-* [imageoptim](https://imageoptim.com/)
-* [visual-studio-code](https://code.visualstudio.com/)
-* [Parallels desktop](https://parallels.com)
+#### `~/.bash.local`
 
-###### Browsers 
+O arquivo `~ / .bash.local` será automaticamente executado após todos os outros arquivos relacionados do` bash` (scripts/shell), permitindo que seu conteúdo adicione ou substitua os alias, configurações, PATH, Etc.
 
-* [google-chrome-canary](https://www.google.com/chrome/browser/canary.html?platform=mac)
-* [firefoxnightly](https://nightly.mozilla.org)
-* [webkit-nightly](https://webkit.org/downloads/)
-* [chromium](https://www.chromium.org/Home)
-* [torbrowser](https://www.torproject.org/projects/torbrowser.html)
+Aqui está um exemplo muito simples de um arquivo `~/.bash.local`:
 
-###### Outros
+```bash
+#!/bin/bash
 
-* [disk-inventory-x](http://www.derlien.com)
-* [vlc](https://www.videolan.org/vlc/)
-* [gpgtools](https://gpgtools.org)
-* [licecap](http://www.cockos.com/licecap/)
-* [utorrent](http://www.utorrent.com/intl/en/)
-* [alfred](https://www.alfredapp.com)
-* [Skype](http://www.skype.com/en/)
-* [Spotify](https://www.spotify.com)
-* [uTorrent](http://www.utorrent.com/)
-* [lastpass](https://lastpass.com)
-* [caffeine](http://lightheadsw.com/caffeine/)
-* [dash](https://kapeli.com/dash)
-* [Evernote](http://evernote.com/) 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Set local aliases.
 
-### 5. Instale outros goodies
+alias starwars="telnet towel.blinkenlights.nl"
 
-[Trash-cli](https://www.npmjs.com/package/trash-cli) (já me ferrei dando rm em arquivo errado)
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-```sh
-npm install --global trash-cli
+# Set PATH additions.
+
+PATH="$PATH:$HOME/Projects/Dotfiles/scripts/bin"
+
+export PATH
+
 ```
 
-[z](https://github.com/rupa/z). Um "cd" turbinado por um pouquinho de machine learning... <3able!
+#### `~/.gitconfig.local`
 
-```sh
-git clone https://github.com/rupa/z.git ~/code/z
-chmod +x ~/code/z/z.sh
+O arquivo `~/.gitconfig.local` será automaticamente incluído após as configurações de `~/.gitconfig`, permitindo que seu conteúdo sobrescreva ou adicione as configurações existentes `git`.
+
+__Nota: __ Use `~/.gitconfig.local` para armazenar informações confidenciais, como as credenciais de usuários `git`, por exemplo:
+
+```bash
+[commit]
+
+    # Sign commits using GPG.
+    # https://help.github.com/articles/signing-commits-using-gpg/
+
+    gpgsign = true
+
+
+[user]
+
+    name = Evandro Paes
+    email = evandropaes@me.com
+    signingkey = XXXXXXXX
 ```
 
-### 6. Configure o git
+### Forks
 
-#### Gere SSH keys para GitHub
-Visite o [Guia oficial do GitHub](https://help.github.com/articles/generating-ssh-keys#platform-mac) para instruções.
+Se você decidir forkar este projeto, não se esqueça de substituir meu nome de usuário com o seu próprio no [`setup`] (#setup) e no` setup`script.
 
-#### Configure o usuário de commit
+## Atualizações
 
-```sh
-git config --global user.name "(Seu Nome)"
-git config --global user.email (seu e-mail)
-```
+Para atualizar os dotfiles, você pode executar o script [`setup`] (scripts/os/setup.sh) ou, se você quiser apenas atualizar uma parte específica, execute o script apropriado [`os`] (scripts/os).
 
-### 7 Configurações do macOS
+## Licença
 
-Eu me inspirei no dotfiles do Victor Cavalcante, que por sua vez se inspirou no PaulIrish, que se inspirou no mathias. A ideia é ter um script que set todas as configurações que você gosta do Mac. Tem de tudo nesse arquivo. Eu ajustei para as minhas necessidades e você deve olhar e arrumar para as suas.
+O código está disponível sob a licença [licença MIT] (LICENSE.txt).
 
-```sh
-sh ~/.dotfiles/scripts/configmacos.sh
-```
-
-### 8. Configure o shell padrão para o ZSH e instale o OH-My-ZSH
-
-Quanto estava usando Windows sempre quis usar um terminal elegante, bonito e prático. Testei alguns, comecei com o bash, depois fui para o fish e finalmente caí no zsh, foi o que mais gostei, ainda mais quando descobri o Oh My ZSH, que é um conjunto de configurações e plugins/temas, que facilitam muito o uso.
-
-Primeiro defina o zsh como shell padrão
-
-```sh
-chsh -s /bin/zsh
-```
-
-Depois instale o Oh-My-ZSH
-```sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-
-Instale as fonts do powerline
-
-```sh
-cp ~/.dotfiles/fonts/. /Library/Fonts/
-```
-
-Para ficar bonito precisa ajustar o tema do iTerm para usar o tema solarized dark e a fonte do powerline
-
-1. iTerm2 -> Preferences
-2. Profiles 
-3. Colors
-4. Color Presets... -> Selecione Solarized Dark
-5. Ainda em Profiles selecione Text
-6. Mude a font para Mezlo LG M DZ for powerline
-
-Para finalizar a configuração do terminal é necessário linkar os dotfiles que estão do diretório `~/.dotfiles` para o diretório `~/`, para isso execute o commando abaixo:
-
-```sh
-cd ~/.dotfiles
-~/.dotfiles/scripts/symlink-setup.sh
-```
-
-Após realizar essa configuração deverá fechar o iTerm2 e abrir novamente. Seu terminal deve estar como a imagem abaixo:
-
-![Terminal com OH-My-ZSH](img/terminal_oh_my_zsh.gif)
-
-### 9. Configure o [Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html) como browser Default.
-
-1. Abra System Preferences
-2. General ➜ Default Web Browser
-3. Selecione “Chrome Canary” from the drop-down menu
-
-
-### 10. Configurar os workflows do [Alfred](http://alfredapp.com) 
-
-Visite [minha coleção de workflows do Alfred](https://github.com/vcavalcante/alfred-workflows) para ver se gosta, se gostar, é só clonar e abrir cada arquivo no alfred, isso já instalará cada um dos wokflows.
-
-### 11. Configure o usuário do [NPM](http://npmjs.org)
-
-```sh
-npm adduser evandropaes
-```
-
-### 12. Trabalhe feliz!
+## Trabalhe feliz!
 
 :)
 
