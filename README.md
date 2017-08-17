@@ -97,6 +97,7 @@ Para configurar os `Dotfiles`, execute o snippet apropriado no terminal:
 (:warning: **NÃO** execute o "setup.sh" se você não entender completamente o que ele faz] (scripts/os/setup.sh). Sério, **NÃO EXECUTE**!)
 
 | OS | Snippet |
+|:---|:--------|
 | `macOS` | `bash -c "$(curl -LsS https://raw.github.com/evandropaes/dotfiles/master/scripts/os/setup.sh)"` |
  
 Só isso! :sparkles:
