@@ -10,6 +10,7 @@ Antes de mais nada, aqui ficam meus agradecimentos ao [Victor Cavalcante](https:
 git clone https://github.com/evandropaes/dotfiles.git ~/.dotfiles
 ```
 Depois revise o código e remova tudo aquilo que você ache desnecessário. Os principais arquivos que você mudar são:
+
 | setup.sh | Entry point e hub de chamada para os outros scripts |
 |:---|:---|
 | .travis.yml | Configuração do ambiente de CI |
@@ -17,6 +18,7 @@ Depois revise o código e remova tudo aquilo que você ache desnecessário. Os p
 | create_local_config_files.sh | Criação das configurações locais (.local) |
 
 E revise os parâmetros das configurações (e suas preferências) em ~/scripts/os/preferences/macos 
+
 | app_store.sh |
 |:---|:---|
 | chrome.sh |
