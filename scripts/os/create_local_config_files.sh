@@ -38,9 +38,9 @@ create_gitconfig_local() {
 
 [user]
 
-    name =
-    email =
-    # signingkey =" \
+    name = Evandro Paes
+    email = evandro.reis@redpill.digital
+    # signingkey = VtuYGUuAQRmvIIhHiY3WOwOCNbA/YSUJpkxSTlKzIY" \
         >> "$FILE_PATH"
     fi
 
@@ -57,7 +57,6 @@ main() {
     create_bash_local
     create_gitconfig_local
  
-
 }
 
 main

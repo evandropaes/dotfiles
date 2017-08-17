@@ -8,28 +8,28 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 print_in_purple "\n   Keyboard\n\n"
 
 execute "defaults write -g AppleKeyboardUIMode -int 3" \
-    "Enable full keyboard access for all controls"
+    "Permitir acesso completo ao teclado para todos os controles"
 
 execute "defaults write -g ApplePressAndHoldEnabled -bool false" \
     "Disable press-and-hold in favor of key repeat"
 
 execute "defaults write -g 'InitialKeyRepeat_Level_Saved' -int 10" \
-    "Set delay until repeat"
+    "Desativar pressionar e manter em favor da repetição da tecla"
 
 execute "defaults write -g KeyRepeat -int 1" \
-    "Set the key repeat rate to fast"
+    "Defina a taxa de repetição da tecla para rápido"
 
 execute "defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false" \
-    "Disable automatic capitalization"
+    "Desativar a capitalização automática"
 
 execute "defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false" \
-    "Disable automatic correction"
+    "Desativar a correção automática"
 
 execute "defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false" \
-    "Disable automatic period substitution"
+    "Desativar a substituição automática do período"
 
 execute "defaults write -g NSAutomaticDashSubstitutionEnabled -bool false" \
-    "Disable smart dashes"
+    "Desabilitar smart dashes"
 
 execute "defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false" \
-    "Disable smart quotes"
+    "Desativar smart quotes"

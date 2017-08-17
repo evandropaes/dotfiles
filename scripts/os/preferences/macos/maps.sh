@@ -12,6 +12,6 @@ execute "defaults write com.apple.Maps LastClosedWindowViewOptions '{
             mapType = 11;         // show hybrid map
             trafficEnabled = 0;   // do not show traffic
          }'" \
-    "Set view options"
+    "Definir as opções de visualização"
 
 killall "Maps" &> /dev/null

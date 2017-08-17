@@ -10,73 +10,73 @@ print_in_purple "\n   UI & UX\n\n"
 
 execute "defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true && \
          defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true" \
-   "Avoid creating '.DS_Store' files on network or USB volumes"
+   "Evite criar arquivos '.DS_Store' em volumes de rede ou USB"
 
 execute "defaults write com.apple.menuextra.battery ShowPercent -string 'NO'" \
-    "Hide battery percentage from the menu bar"
+    "Ocultar porcentagem da bateria da barra de menus"
 
 execute "sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true" \
-    "Show language menu in the top right corner of the boot screen"
+    "Mostrar menu de idioma no canto superior direito da tela de inicialização"
 
 execute "defaults write com.apple.CrashReporter UseUNC 1" \
-    "Make crash reports appear as notifications"
+    "Os relatórios de falhas aparecem como notificações"
 
 execute "defaults write com.apple.LaunchServices LSQuarantine -bool false" \
-    "Disable 'Are you sure you want to open this application?' dialog"
+    "Desativa o painel 'Are you sure you want to open this application?'"
 
 execute "defaults write com.apple.print.PrintingPrefs 'Quit When Finished' -bool true" \
-    "Automatically quit the printer app once the print jobs are completed"
+    "Fecher automaticamente o aplicativo da impressora assim que os trabalhos de impressão estiverem concluídos."
 
 execute "defaults write com.apple.screencapture disable-shadow -bool true" \
-    "Disable shadow in screenshots"
+    "Desativar sombra nas capturas de tela"
 
 execute "defaults write com.apple.screencapture location -string '$HOME/Desktop'" \
-    "Save screenshots to the Desktop"
+    "Guarde screenshots na área de trabalho"
 
 execute "defaults write com.apple.screencapture type -string 'png'" \
-    "Save screenshots as PNGs"
+    "Guarde screenshots como PNGs"
 
 execute "defaults write com.apple.screensaver askForPassword -int 1 && \
          defaults write com.apple.screensaver askForPasswordDelay -int 0"\
-    "Require password immediately after into sleep or screen saver mode"
+    "Exigir senha imediatamente após o modo de suspensão ou modo de proteção de tela"
 
 execute "defaults write -g AppleFontSmoothing -int 2" \
-    "Enable subpixel font rendering on non-Apple LCDs"
+    "Ativar a renderização de fontes subpixel em LCDs que não sejam da Apple"
 
 execute "defaults write -g AppleShowScrollBars -string 'Always'" \
-    "Always show scrollbars"
+    "Mostra sempre barras de rolagem"
 
 execute "defaults write -g NSDisableAutomaticTermination -bool true" \
-    "Disable automatic termination of inactive apps"
+    "Desativar o término automático de aplicativos inativos"
 
 execute "defaults write -g NSNavPanelExpandedStateForSaveMode -bool true" \
-    "Expand save panel by default"
+    "Expanda o painel salvar por padrão"
 
 execute "defaults write -g NSTableViewDefaultSizeMode -int 2" \
-    "Set sidebar icon size to medium"
+    "Definir o tamanho do ícone da barra lateral como médio"
 
 execute "defaults write -g NSUseAnimatedFocusRing -bool false" \
-    "Disable the over-the-top focus ring animation"
+    "Desative a animação do anel de foco superior"
 
 execute "defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false" \
-    "Disable resume system-wide"
+    "Desative resume system-wide"
 
 execute "defaults write -g PMPrintingExpandedStateForPrint -bool true" \
-    "Expand print panel by default"
+    "Expanda o painel de impressão por padrão"
 
 execute "sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string 'Laptop' && \
          sudo scutil --set ComputerName 'laptop' && \
          sudo scutil --set HostName 'laptop' && \
          sudo scutil --set LocalHostName 'laptop'" \
-    "Set computer name"
+    "Definir o nome do computador"
 
 execute "sudo systemsetup -setrestartfreeze on" \
-    "Restart automatically if the computer freezes"
+    "Reinicie automaticamente se o computador estiver congelado"
 
 execute "sudo defaults write /Library/Preferences/com.apple.Bluetooth.plist ControllerPowerState 0 && \
          sudo launchctl unload /System/Library/LaunchDaemons/com.apple.blued.plist && \
          sudo launchctl load /System/Library/LaunchDaemons/com.apple.blued.plist" \
-    "Turn Bluetooth off"
+    "Deslige Bluetooth"
 
 execute "for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
             sudo defaults write \"\${domain}\" dontAutoLoad -array \
@@ -89,6 +89,6 @@ execute "for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; 
                 '/System/Library/CoreServices/Menu Extras/Battery.menu' \
                 '/System/Library/CoreServices/Menu Extras/Clock.menu'
         " \
-    "Hide Time Machine and Volume icons from the menu bar"
+    "Ocultar ícones de Time Machine e Volume da barra de menu"
 
 killall "SystemUIServer" &> /dev/null

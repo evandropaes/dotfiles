@@ -8,10 +8,10 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 print_in_purple "\n   Language & Region\n\n"
 
 execute "defaults write -g AppleLanguages -array 'en'" \
-    "Set language"
+    "Definir lingua"
 
 execute "defaults write -g AppleMeasurementUnits -string 'Centimeters'" \
-    "Set measurement units"
+    "Definir as unidades de medida"
 
 execute "defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false" \
-    "Disable auto-correct"
+    "Definir a auto-correção"

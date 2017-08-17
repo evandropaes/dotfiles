@@ -8,32 +8,32 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 print_in_purple "\n   Transmission\n\n"
 
 execute "defaults write org.m0k.transmission DeleteOriginalTorrent -bool true" \
-    "Delete the original torrent files"
+    "Exclua os arquivos originais do torrent"
 
 execute "defaults write org.m0k.transmission DownloadAsk -bool false" \
-    "Don’t prompt for confirmation before downloading"
+    "Não solicite confirmação antes de fazer o download"
 
 execute "defaults write org.m0k.transmission MagnetOpenAsk -bool false" \
-    "Don’t prompt for confirmation before downloading for magnet links"
+    "Não solicite confirmação antes do download para links magnets"
 
 execute "defaults write org.m0k.transmission CheckRemoveDownloading -bool true" \
-    "Don’t prompt for confirmation before removing non-downloading active transfers"
+    "Não solicite confirmação antes de remover as transferências ativas não baixadas"
 
 execute "defaults write org.m0k.transmission DownloadChoice -string 'Constant' && \
          defaults write org.m0k.transmission DownloadFolder -string '$HOME/Downloads'" \
-    "Use '~/Downloads' to store complete downloads"
+    "Use '~/Downloads' para armazenar downloads completos"
 
 execute "defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true && \
-         defaults write org.m0k.transmission IncompleteDownloadFolder -string '$HOME/Downloads/torrents'" \
-    "Use '~/Downloads/torrents' to store incomplete downloads"
+         defaults write org.m0k.transmission IncompleteDownloadFolder -string '$HOME/Downloads/Torrents'" \
+    "Use '~/Downloads/Torrents' para armazenar downloads incompletos"
 
 execute "defaults write org.m0k.transmission WarningDonate -bool false" \
-    "Hide the donate message"
+    "Ocultar a mensagem de doação"
 
 execute "defaults write org.m0k.transmission WarningLegal -bool false" \
-    "Hide the legal disclaimer"
+    "Ocultar o aviso legal"
 
 execute "defaults write org.m0k.transmission RandomPort -bool true" \
-    "Randomize port on launch"
+    "Randomize a porta no lançamento"
 
 killall "Transmission" &> /dev/null

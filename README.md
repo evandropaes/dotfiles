@@ -1,15 +1,56 @@
 **Work-In-Progress (Beta)** 
 
-# Evandro Reis (RedPill.digital) Dotfiles (macOS e Ubuntu) [![Build Status](https://travis-ci.org/evandropaes/dotfiles.svg?branch=master)](https://travis-ci.org/evandropaes/dotfiles)
+# Evandro Reis (RedPill.digital) Dotfiles (macOS) [![Build Status](https://travis-ci.org/evandropaes/dotfiles.svg?branch=master)](https://travis-ci.org/evandropaes/dotfiles)
 
-Antes de mais nada, aqui ficam meus agradecimentos ao [Victor Cavalcante](https://github.com/vcavalcante/) (grande amigo da Lambda3) que apresentou-me o conceito de Dotfiles e indicou-me seu tutorial de .dotfiles. Valeu, brother. Agradecimentos também ao [Cătălin Mariș](https://github.com/alrra) pelos scrips e complementos. Estou baseando muito das configurações que seguem aqui no trabalho inicial dele. 
+Antes de mais nada, aqui ficam meus agradecimentos ao [Victor Cavalcante](https://github.com/vcavalcante/) (grande amigo da Lambda3) que apresentou-me o conceito de Dotfiles e indicou-me seu tutorial. Valeu, brother. Agradecimentos também ao [Cătălin Mariș](https://github.com/alrra) pelos scrips e complementos. Estou baseando muito das configurações que seguem aqui no trabalho inicial dele. 
 
 :warning: **AVISO:** Se você quiser usar esses dotfiles e scripts de configuração, primeiro faça um fork com o comando abaixo. **NÃO** os use sem saber o que está fazendo.  
 
 ```bash
 git clone https://github.com/evandropaes/dotfiles.git ~/.dotfiles
 ```
-Depois revise o código e remova tudo aquilo que você ache desnecessário. Não tente usar cegamente as configurações se você não sabe o que está fazendo. Use por sua conta e risco! É importante mudar alguns scripts para refletirem seu ambiente (como, por exemplo, seu username).
+Depois revise o código e remova tudo aquilo que você ache desnecessário. Os principais arquivos que você mudar são:
+| setup.sh | Entry point e hub de chamada para os outros scripts |
+|:---|:---|
+| .travis.yml | Configuração do ambiente de CI |
+|:---|:---|
+| create_local_config_files.sh | Criação das configurações locais (.local) |
+
+E revise os parâmetros das configurações (e suas preferências) em ~/scripts/os/preferences/macos 
+| app_store.sh |
+|:---|:---|
+| chrome.sh |
+|:---|:---|
+| dashboard.sh |
+|:---|:---|
+| dock.sh |
+|:---|:---|
+| finder.sh |
+|:---|:---|
+| firefox.sh |
+|:---|:---|
+| keyboard.sh |
+|:---|:---|
+| language_and_region.sh |
+|:---|:---|
+| maps.sh |
+|:---|:---|
+| photos.sh |
+|:---|:---|
+| safari.sh |
+|:---|:---|
+| terminal.sh |
+|:---|:---|
+| textedit.sh |
+|:---|:---|
+| trackpad.sh |
+|:---|:---|
+| transmission.sh |
+|:---|:---|
+| ui_and_ux.sh|
+ 
+
+Não tente usar cegamente as configurações se você não sabe o que está fazendo. Use por sua conta e risco! É importante mudar alguns scripts para refletirem seu ambiente (como, por exemplo, seu username).
 
 Os arquivos locais (.local) servem para você alterar as configurações sem precisar mexer no core dos Dotfiles.
 

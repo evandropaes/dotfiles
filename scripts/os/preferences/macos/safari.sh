@@ -8,36 +8,36 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 print_in_purple "\n   Safari\n\n"
 
 execute "defaults write com.apple.Safari AutoOpenSafeDownloads -bool false" \
-    "Disable opening 'safe' files automatically"
+    "Desative abrir arquivos "seguros" automaticamente"
 
 execute "defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true" \
-    "Set backspace key to go to the previous page in history"
+    "Defina a tecla de retrocesso para ir para a página anterior no histórico"
 
 execute "defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true && \
          defaults write com.apple.Safari IncludeDevelopMenu -bool true && \
          defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true" \
-    "Enable the 'Develop' menu and the 'Web Inspector'"
+    "Ative o menu 'Developer' e o 'Web Inspector'"
 
 execute "defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false" \
-    "Set search type to 'Contains' instead of 'Starts With'"
+    "Defina o tipo de pesquisa como 'Contém' em vez de 'Iniciando com'"
 
 execute "defaults write com.apple.Safari HomePage -string 'about:blank'" \
-    "Set home page to 'about:blank'"
+    "Configure a página inicial para 'about: blank'"
 
 execute "defaults write com.apple.Safari IncludeInternalDebugMenu -bool true" \
-    "Enable 'Debug' menu"
+    "Habilitar o menu 'Debug'"
 
 execute "defaults write com.apple.Safari ShowFavoritesBar -bool false" \
-    "Hide bookmarks bar by default"
+    "Ocultar barra de marcadores por padrão"
 
 execute "defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true" \
-    "Show the full URL in the address bar"
+    "Mostra o URL completo na barra de endereços"
 
 execute "defaults write com.apple.Safari SuppressSearchSuggestions -bool true && \
          defaults write com.apple.Safari UniversalSearchEnabled -bool false" \
-    "Don’t send search queries to Apple"
+    "Não envie consultas de pesquisa para a Apple"
 
 execute "defaults write -g WebKitDeveloperExtras -bool true" \
-    "Add a context menu item for showing the 'Web Inspector' in web views"
+    "Adicione um item de menu de contexto para mostrar o 'Web Inspector' nas visualizações da web"
 
 killall "Safari" &> /dev/null

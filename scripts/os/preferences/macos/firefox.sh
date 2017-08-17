@@ -8,6 +8,6 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 print_in_purple "\n   Firefox\n\n"
 
 execute "defaults write org.mozilla.firefox AppleEnableSwipeNavigateWithScrolls -bool false" \
-    "Disable backswipe"
+    "Desabilita o backswipe"
 
 killall "firefox" &> /dev/null

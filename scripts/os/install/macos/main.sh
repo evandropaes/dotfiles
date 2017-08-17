@@ -6,11 +6,11 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-./xcode.sh
+#./xcode.sh
+
 ./homebrew.sh
 ./bash.sh
 ./../nvm.sh
-
 ./browsers.sh
 ./compression_tools.sh
 ./git.sh
@@ -21,7 +21,8 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 ./../npm.sh
 ./tmux.sh
 ./video_tools.sh
-#./../vim.sh
-./web_font_tools.sh
 
+#./../vim.sh
+
+./web_font_tools.sh
 ./cleanup.sh
