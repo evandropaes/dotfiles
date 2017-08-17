@@ -68,13 +68,12 @@ Para configurar os `Dotfiles`, execute o snippet apropriado no terminal:
 | OS | Snippet |
 |:---|:---|
 | `macOS` | `bash -c "$(curl -LsS https://raw.github.com/evandropaes/dotfiles/master/scripts/os/setup.sh)"` |
-| `Ubuntu` | `bash -c "$(wget -qO - https://raw.github.com/alrra/evandropaes/master/scripts/os/setup.sh)"` |
-
+ 
 Só isso! :sparkles:
 
 O setup.sh irá: 
 
-* Download the dotfiles on your computer (by default it will suggest   `~/Projects/Dotfiles`)
+* Fazer o download dos dotfiles no seu computador (default `~/Projects/Dotfiles`)
 * Criar os diretórios [directories](scripts/os/create_directories.sh)
 * [Symlink](scripts/os/create_symbolic_links.sh) the 
   [`git`](scripts/git),
