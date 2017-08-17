@@ -1,6 +1,6 @@
 **Work-In-Progress (Beta)** 
 
-# Evandro Reis (RedPill.digital) Dotfiles (macOS e Ubuntu) [![Build Status]](https://travis-ci.org/evandropaes/dotfiles)
+# Evandro Reis (RedPill.digital) Dotfiles (macOS e Ubuntu) [![Build Status](https://travis-ci.org/evandropaes/dotfiles.svg?branch=master)](https://travis-ci.org/evandropaes/dotfiles)
 
 Antes de mais nada, aqui ficam meus agradecimentos ao [Victor Cavalcante](https://github.com/vcavalcante/) (grande amigo da Lambda3) que apresentou-me o conceito de Dotfiles e indicou-me seu tutorial de .dotfiles. Valeu, brother. Agradecimentos também ao [Cătălin Mariș](https://github.com/alrra) pelos scrips e complementos. Estou baseando muito das configurações que seguem aqui no trabalho inicial dele. 
 
