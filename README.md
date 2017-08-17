@@ -20,9 +20,7 @@ Depois revise o código e remova tudo aquilo que você ache desnecessário. Os p
 E revise os parâmetros das configurações (e suas preferências) em ~/scripts/os/preferences/macos 
 
 | app_store.sh |
-|:---|:---|
 | chrome.sh |
-|:---|:---|
 | dashboard.sh |
 |:---|:---|
 | dock.sh |
