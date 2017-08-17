@@ -22,22 +22,22 @@ E revise os parâmetros das configurações (e suas preferências) em ~/scripts/
 
 | Script                 | Descrição                         |
 |------------------------|-----------------------------------|
-| app_store.sh           | Configurações da App Store        |
-| chrome.sh              | Configurações para Google Chrome  |
-| dashboard.sh           | Configurações para o Dashboard    |
-| dock.sh                | Configurações para o Dock         |
-| finder.sh              | |
-| firefox.sh             | |
-| keyboard.sh            | |
-| language_and_region.sh | |
-| maps.sh                | |
-| photos.sh              | |
-| safari.sh              | | 
-| terminal.sh            | | 
-| textedit.sh            | |
-| trackpad.sh            | |
-| transmission.sh        | |
-| ui_and_ux.sh           | |
+| app_store.sh           | Preferências da App Store        |
+| chrome.sh              | Preferências para Google Chrome  |
+| dashboard.sh           | Preferências para o Dashboard    |
+| dock.sh                | Preferências para o Dock         |
+| finder.sh              | Preferências do Finder |
+| firefox.sh             | Preferências do Firefox |
+| keyboard.sh            | Preferências do Teclado |
+| language_and_region.sh | Preferências de Lingua e Região |
+| maps.sh                | Preferências de Localização |
+| photos.sh              | Preferências de fotos |
+| safari.sh              | Preferências do Safari | 
+| terminal.sh            | Preferências do Terminal | 
+| textedit.sh            | Preferências do TextEdit |
+| trackpad.sh            | Preferências do Trackpad |
+| transmission.sh        | Preferências do Transmission |
+| ui_and_ux.sh           | Preferências da interace do usuário |
  
 
 Não tente usar cegamente as configurações se você não sabe o que está fazendo. Use por sua conta e risco! É importante mudar alguns scripts para refletirem seu ambiente (como, por exemplo, seu username).
