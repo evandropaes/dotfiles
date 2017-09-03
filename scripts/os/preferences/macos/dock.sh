@@ -7,8 +7,8 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 print_in_purple "\n   Dock\n\n"
 
-execute "defaults write com.apple.dock autohide -bool true" \
-    "Automaticamente hide/show o Dock"
+# execute "defaults write com.apple.dock autohide -bool true" \
+#     "Automaticamente hide/show o Dock"
 
 execute "defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true" \
     "Ativar carregamento spring para todos os itens da Dock"
@@ -25,9 +25,9 @@ execute "defaults write com.apple.dock minimize-to-application -bool true" \
 execute "defaults write com.apple.dock mru-spaces -bool false" \
     "Não reorganize automaticamente espaços com base no uso mais recente"
 
-execute "defaults write com.apple.dock persistent-apps -array && \
-         defaults write com.apple.dock persistent-others -array " \
-    "Apague todos os ícones de aplicação"
+# execute "defaults write com.apple.dock persistent-apps -array && \
+#          defaults write com.apple.dock persistent-others -array " \
+#     "Apague todos os ícones de aplicação"
 
 execute "defaults write com.apple.dock show-process-indicators -bool true" \
     "Mostrar luzes indicadoras para aplicações abertas"

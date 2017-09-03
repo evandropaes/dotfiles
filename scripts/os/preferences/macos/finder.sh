@@ -40,11 +40,11 @@ execute "defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool t
          defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true" \
     "Mostre ícones para discos rígidos, servidores e mídia removível na área de trabalho"
 
-execute "defaults write com.apple.finder ShowRecentTags -bool false" \
-    "Não mostra as tags atuais"
+# execute "defaults write com.apple.finder ShowRecentTags -bool false" \
+#     "Não mostra as tags atuais"
 
-execute "defaults write -g AppleShowAllExtensions -bool true" \
-    "Mostre as extensões de nome de arquivo"
+# execute "defaults write -g AppleShowAllExtensions -bool true" \
+#     "Mostre as extensões de nome de arquivo"
 
 execute "/usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:iconSize 72' ~/Library/Preferences/com.apple.finder.plist && \
          /usr/libexec/PlistBuddy -c 'Set :StandardViewSettings:IconViewSettings:iconSize 72' ~/Library/Preferences/com.apple.finder.plist" \

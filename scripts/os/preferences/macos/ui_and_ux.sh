@@ -12,8 +12,8 @@ execute "defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool
          defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true" \
    "Evite criar arquivos '.DS_Store' em volumes de rede ou USB"
 
-execute "defaults write com.apple.menuextra.battery ShowPercent -string 'NO'" \
-    "Ocultar porcentagem da bateria da barra de menus"
+# execute "defaults write com.apple.menuextra.battery ShowPercent -string 'NO'" \
+#     "Ocultar porcentagem da bateria da barra de menus"
 
 execute "sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true" \
     "Mostrar menu de idioma no canto superior direito da tela de inicialização"
@@ -21,8 +21,8 @@ execute "sudo defaults write /Library/Preferences/com.apple.loginwindow showInpu
 execute "defaults write com.apple.CrashReporter UseUNC 1" \
     "Os relatórios de falhas aparecem como notificações"
 
-execute "defaults write com.apple.LaunchServices LSQuarantine -bool false" \
-    "Desativa o painel 'Are you sure you want to open this application?'"
+# execute "defaults write com.apple.LaunchServices LSQuarantine -bool false" \
+#     "Desativa o painel 'Are you sure you want to open this application?'"
 
 execute "defaults write com.apple.print.PrintingPrefs 'Quit When Finished' -bool true" \
     "Fecher automaticamente o aplicativo da impressora assim que os trabalhos de impressão estiverem concluídos."
@@ -64,10 +64,10 @@ execute "defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bo
 execute "defaults write -g PMPrintingExpandedStateForPrint -bool true" \
     "Expanda o painel de impressão por padrão"
 
-execute "sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string 'Laptop' && \
-         sudo scutil --set ComputerName 'laptop' && \
-         sudo scutil --set HostName 'laptop' && \
-         sudo scutil --set LocalHostName 'laptop'" \
+execute "sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string 'imac' && \
+         sudo scutil --set ComputerName 'imac' && \
+         sudo scutil --set HostName 'imac' && \
+         sudo scutil --set LocalHostName 'imac'" \
     "Definir o nome do computador"
 
 execute "sudo systemsetup -setrestartfreeze on" \

@@ -8,7 +8,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 print_in_purple "\n   Safari\n\n"
 
 execute "defaults write com.apple.Safari AutoOpenSafeDownloads -bool false" \
-    "Desative abrir arquivos "seguros" automaticamente"
+    "Desative abrir arquivos 'seguros' automaticamente"
 
 execute "defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true" \
     "Defina a tecla de retrocesso para ir para a página anterior no histórico"
