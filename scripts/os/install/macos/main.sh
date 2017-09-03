@@ -11,6 +11,8 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 ./homebrew.sh
 ./bash.sh
 ./../nvm.sh
+./devtools.sh
+./dailytools.sh
 ./browsers.sh
 ./compression_tools.sh
 ./git.sh
@@ -21,8 +23,6 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 ./../npm.sh
 ./tmux.sh
 ./video_tools.sh
-
-#./../vim.sh
-
+./extratools.sh
 ./web_font_tools.sh
 ./cleanup.sh
