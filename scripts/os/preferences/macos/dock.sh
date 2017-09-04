@@ -10,6 +10,9 @@ print_in_purple "\n   Dock\n\n"
 # execute "defaults write com.apple.dock autohide -bool true" \
 #     "Automaticamente hide/show o Dock"
 
+executte "defaults write com.apple.dock mouse-over-hilite-stack -boolean yes" \
+    "Destacar os items do Stack quando mouse passa por cima"
+
 execute "defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true" \
     "Ativar carregamento spring para todos os itens da Dock"
 
