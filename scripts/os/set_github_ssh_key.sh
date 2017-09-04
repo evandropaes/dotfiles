@@ -12,7 +12,7 @@ add_ssh_configs() {
         "  IdentityFile $1" \
         "  LogLevel ERROR" >> ~/.ssh/config
 
-    print_result $? "Add SSH configs"
+    print_result $? "Adicionando configuração SSH"
 
 }
 
@@ -21,25 +21,25 @@ copy_public_ssh_key_to_clipboard () {
     if cmd_exists "pbcopy"; then
 
         pbcopy < "$1"
-        print_result $? "Copy public SSH key to clipboard"
+        print_result $? "Copiando a chave pública SSH para o clipboard"
 
     elif cmd_exists "xclip"; then
 
         xclip -selection clip < "$1"
-        print_result $? "Copy public SSH key to clipboard"
+        print_result $? "Copiando a chave pública SSH para o clipboard"
 
     else
-        print_warning "Please copy the public SSH key ($1) to clipboard"
+        print_warning "Por favor, copie a chave pública SSH ($1) para o clipboard"
     fi
 
 }
 
 generate_ssh_keys() {
 
-    ask "Please provide an email address: " && printf "\n"
+    ask "Entre com seu e-mail: " && printf "\n"
     ssh-keygen -t rsa -b 4096 -C "$(get_answer)" -f "$1"
 
-    print_result $? "Generate SSH keys"
+    print_result $? "Gerando as chaves SSH..."
 
 }
 
@@ -55,7 +55,7 @@ open_github_ssh_page() {
     elif cmd_exists "open"; then
         open "$GITHUB_SSH_URL"
     else
-        print_warning "Please add the public SSH key to GitHub ($GITHUB_SSH_URL)"
+        print_warning "Por favor, adicione a chave SSH ao GitHub ($GITHUB_SSH_URL)"
     fi
 
 }
@@ -101,12 +101,12 @@ test_ssh_connection() {
 
 main() {
 
-    print_in_purple "\n • Set up GitHub SSH keys\n\n"
+    print_in_purple "\n • Configurando as chaves SSH no GitHub\n\n"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     if ! is_git_repository; then
-        print_error "Not a Git repository"
+        print_error "Não há um repositório Git"
         exit 1
     fi
 
@@ -120,7 +120,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    print_result $? "Set up GitHub SSH keys"
+    print_result $? "Configurando as chaves SSH no GitHub"
 
 }
 

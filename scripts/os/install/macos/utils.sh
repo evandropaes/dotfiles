@@ -13,13 +13,9 @@ brew_cleanup() {
     #
     # https://github.com/Homebrew/brew/blob/496fff643f352b0943095e2b96dbc5e0f565db61/share/doc/homebrew/FAQ.md#how-do-i-uninstall-old-versions-of-a-formula
 
-    execute \
-        "brew cleanup" \
-        "Homebrew (cleanup)"
+    execute "brew cleanup" "Homebrew (cleanup)"
 
-    execute \
-        "brew cask cleanup" \
-        "Homebrew (cask cleanup)"
+    execute "brew cask cleanup" "Homebrew (cask cleanup)"
 
 }
 
@@ -35,33 +31,31 @@ brew_install() {
     # Check if `Homebrew` is installed.
 
     if ! cmd_exists "brew"; then
-        print_error "$FORMULA_READABLE_NAME ('Homebrew' is not installed)"
+        print_error "$FORMULA_READABLE_NAME ('Homebrew' não está instalado)."
         return 1
     fi
 
+    
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     # If `brew tap` needs to be executed,
     # check if it executed correctly.
 
     if [ -n "$TAP_VALUE" ]; then
         if ! brew_tap "$TAP_VALUE"; then
-            print_error "$FORMULA_READABLE_NAME ('brew tap $TAP_VALUE' failed)"
+            print_error "$FORMULA_READABLE_NAME ('brew tap $TAP_VALUE' falhou)"
             return 1
         fi
     fi
-
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Install the specified formula.
 
     # shellcheck disable=SC2086
-    if brew $CMD list "$FORMULA" &> /dev/null; then
-        print_success "$FORMULA_READABLE_NAME"
+    
+    if brew $CMD list --versions "$FORMULA" &> /dev/null; then
+        print_success "$FORMULA_READABLE_NAME já está instalado."
     else
-        execute \
-            "brew $CMD install $FORMULA" \
-            "$FORMULA_READABLE_NAME"
+        execute "brew $CMD install $FORMULA" "$FORMULA_READABLE_NAME"
     fi
 
 }
