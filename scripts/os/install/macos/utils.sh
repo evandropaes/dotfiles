@@ -33,7 +33,7 @@ brew_install() {
     if ! cmd_exists "brew"; then
         print_error "$FORMULA_READABLE_NAME ('Homebrew' não está instalado)."
         return 1
-    fi
+    fi 
 
     
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
