@@ -33,7 +33,7 @@ brew_install() {
     if ! cmd_exists "brew"; then
         print_error "$FORMULA_READABLE_NAME ('Homebrew' não está instalado)."
         return 1
-    fi
+    fi 
 
     
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -52,7 +52,7 @@ brew_install() {
 
     # shellcheck disable=SC2086
     
-    if brew $CMD list --versions "$FORMULA" &> /dev/null; then
+    if (brew $CMD list --versions "$FORMULA" &> /dev/null) || [ -d "$FORMULA_READABLE_NAME.app" ]; then
         print_success "$FORMULA_READABLE_NAME já está instalado."
     else
         execute "brew $CMD install $FORMULA" "$FORMULA_READABLE_NAME"
