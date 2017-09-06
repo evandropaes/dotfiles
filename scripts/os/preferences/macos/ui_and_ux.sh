@@ -3,6 +3,8 @@
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "../../utils.sh"
 
+declare -r HOSTNAME="$1"
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 print_in_purple "\n   UI & UX\n\n"

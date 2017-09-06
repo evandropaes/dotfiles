@@ -2,6 +2,11 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
+
+declare -r HOSTNAME="$1"
+declare -r USERNAME="$2"
+declare -r EMAIL="$3"
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Close any open `System Preferences` panes in order to
@@ -28,4 +33,4 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 ./trackpad.sh
 ./transmission.sh
 ./twitter.sh
-./ui_and_ux.sh
+./ui_and_ux.sh "$HOSTNAME" 

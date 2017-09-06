@@ -13,7 +13,7 @@ declare skipQuestions=false
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-declare -r HOSTNAME=$(hostname) 
+declare -r HOSTNAME; HOSTNAME=$(hostname) 
 declare -r USERNAME="$1"
 declare -r EMAIL="$2"
 
