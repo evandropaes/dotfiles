@@ -13,7 +13,7 @@ main() {
     #  (from: https://twitter.com/astarasikov/status/568825996532707330)
 
     find \
-        ../test \
+        ../travis \
         ../scripts/os \
         ../scripts/shell \
         -type f \
