@@ -11,6 +11,12 @@ declare -r DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSIT
 declare dotfilesDirectory="$HOME/Projects/Dotfiles"
 declare skipQuestions=false
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+declare -r HOSTNAME=$(hostname) 
+declare -r USERNAME="$1"
+declare -r EMAIL="$2"
+
 # ----------------------------------------------------------------------
 # | Helper Functions                                                   |
 # ----------------------------------------------------------------------
@@ -262,7 +268,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    ./preferences/main.sh
+    ./preferences/main.sh "$HOSTNAME" "$USERNAME" "$EMAIL"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

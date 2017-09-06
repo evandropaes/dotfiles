@@ -64,10 +64,10 @@ execute "defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bo
 execute "defaults write -g PMPrintingExpandedStateForPrint -bool true" \
     "Expanda o painel de impressão por padrão"
 
-execute "sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string 'macpro' && \
-         sudo scutil --set ComputerName 'macpro' && \
-         sudo scutil --set HostName 'macpro' && \
-         sudo scutil --set LocalHostName 'macpro'" \
+execute "sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string '$HOSTNAME' && \
+         sudo scutil --set ComputerName '$HOSTNAME' && \
+         sudo scutil --set HostName '$HOSTNAME' && \
+         sudo scutil --set LocalHostName '$HOSTNAME'" \
     "Definir o nome do computador"
 
 execute "sudo systemsetup -setrestartfreeze on" \
