@@ -156,13 +156,14 @@ get_os_version() {
 
 is_app_installed()
 {
-    local appNameOrBundleId=$1
-    local bundleId
+    # local appNameOrBundleId=$1
+    # local bundleId
 
-    bundleId=$(osascript -e "id of application \"$appNameOrBundleId\"" 2>/dev/null)
+    # bundleId=$(osascript -e "id of application \"$appNameOrBundleId\"" 2>/dev/null)
 
-    osascript -e "tell application \"Finder\" to POSIX path of (get application file id \"$bundleId\" as alias)" 2>/dev/null ||
-        {return 0; return 1; }
+    # osascript -e "tell application \"Finder\" to POSIX path of (get application file id \"$bundleId\" as alias)" 2>/dev/null ||
+    #     {return 0; return 1; }
+    return 1
 }
 
 
