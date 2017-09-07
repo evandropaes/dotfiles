@@ -6,12 +6,15 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-#./xcode.sh
+
+./xcode.sh
 
 ./homebrew.sh
 ./bash.sh
 ./../nvm.sh
+./mas.sh
 ./devtools.sh
+./visualstudiocode.sh
 ./dailytools.sh
 ./browsers.sh
 ./compression_tools.sh

@@ -8,10 +8,10 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 agree_with_xcode_licence() {
 
     # Automatically agree to the terms of the `Xcode` license.
- 
+
 
     sudo xcodebuild -license accept &> /dev/null
-    print_result $? "Agree to the terms of the Xcode licence"
+    print_result $? "De acordo com os termos da licença do Xcode"
 
 }
 
@@ -35,7 +35,7 @@ install_xcode() {
         "until is_xcode_installed; do \
             sleep 5; \
          done" \
-        "Xcode.app"
+        "Xcode"
 
 }
 
@@ -66,10 +66,10 @@ set_xcode_developer_directory() {
 
     # Point the `xcode-select` developer directory to
     # the appropriate directory from within `Xcode.app`.
- 
+
 
     sudo xcode-select -switch "/Applications/Xcode.app/Contents/Developer" &> /dev/null
-    print_result $? "Make 'xcode-select' developer directory point to the appropriate directory from within Xcode.app"
+    print_result $? "Apontando 'xcode-select' para o diretório de desenvolvimento correto, dentro do Xcode.app"
 
 }
 

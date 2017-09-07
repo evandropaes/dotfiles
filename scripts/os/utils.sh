@@ -30,7 +30,7 @@ ask_for_sudo() {
 
     while true; do
         sudo -n true
-        sleep 60
+        sleep 120
         kill -0 "$$" || exit
     done &> /dev/null &
 
@@ -156,13 +156,13 @@ get_os_version() {
 
 is_app_installed()
 {
-  local appNameOrBundleId=$1 
-  local isAppName=0 
+  local appNameOrBundleId=$1
+  local isAppName=0
   local bundleId
-  
+
   # Determine whether an app *name* or *bundle ID* was specified.
   [[ $appNameOrBundleId =~ \.[aA][pP][pP]$ || $appNameOrBundleId =~ ^[^.]+$ ]] && isAppName=1
-  
+
   if (( isAppName )); then # an application NAME was specified
     # Translate to a bundle ID first.
     bundleId=$(osascript -e "id of application \"$appNameOrBundleId\"") >/dev/null ||
@@ -170,7 +170,7 @@ is_app_installed()
   else # a BUNDLE ID was specified
     bundleId=$appNameOrBundleId
   fi
-  
+
   # Let AppleScript determine the full bundle path.
   osascript -e "tell application \"Finder\" to POSIX path of (get application file id \"$bundleId\" as alias)" >/dev/null ||
     { return 1; }
