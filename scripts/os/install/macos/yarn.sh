@@ -13,15 +13,6 @@ install_yarn() {
     fi
 }
 
-
-yarn_upgrade() {
-
-
-    execute \
-        "yarn upgrade" \
-        "Yarn (upgrade)"
-}
-
 install_yarn_packages() {
 
     install_yarn_package "commitizen" "Commitizen"
