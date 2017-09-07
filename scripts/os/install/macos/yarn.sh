@@ -11,9 +11,6 @@ install_yarn() {
     if ! cmd_exists "yarn"; then
          execute "npm install --global --silent yarn" "Yarn"
     fi
-
-
-    print_result $? "Yarn"
 }
 
 
@@ -27,12 +24,12 @@ yarn_upgrade() {
 
 install_yarn_packages() {
 
-    yarn_install_package "commitizen" "Commitizen"
-    yarn_install_package "create-react-app" "React App"
-    yarn_install_package "create-react-native-app" "React Native App"
-    yarn_install_package "exp" "Exp"
-    yarn_install_package "flow-bin" "Flow Bin"
-    yarn_install_package "lerna" "Lerna"
+    install_yarn_package "commitizen" "Commitizen"
+    install_yarn_package "create-react-app" "React App"
+    install_yarn_package "create-react-native-app" "React Native App"
+    install_yarn_package "exp" "Exp"
+    install_yarn_package "flow-bin" "Flow Bin"
+    install_yarn_package "lerna" "Lerna"
 }
 
 install_yarn_package() {
@@ -62,7 +59,6 @@ main() {
     print_in_purple "\n   Yarn\n\n"
 
     install_yarn
-    yarn_upgrade
     install_yarn_packages
 
 }
