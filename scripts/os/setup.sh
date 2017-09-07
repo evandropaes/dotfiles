@@ -11,7 +11,7 @@ declare -r DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSIT
 declare dotfilesDirectory="$HOME/Projects/Dotfiles"
 declare skipQuestions=false
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 declare -r HOSTNAME="$1"
 declare -r USERNAME="$2"
@@ -231,7 +231,7 @@ main() {
     else
         download_utils || exit 1
     fi
-    
+
     print_in_yellow "\n\n   >>> Executando set up para usuário '$USERNAME' ('$EMAIL') no host '$HOSTNAME'\n"
     print_in_yellow "   ----\n\n"
     # Ensure that the following actions
@@ -292,9 +292,9 @@ main() {
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        if ! $skipQuestions; then
-            ./update_content.sh
-        fi
+        # if ! $skipQuestions; then
+        #     ./update_content.sh
+        # fi
 
     fi
 
