@@ -3,9 +3,6 @@
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "../utils.sh"
 
-local USERNAME="$1"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 install_npm_package() {
 
@@ -19,6 +16,8 @@ install_npm_package() {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
+
+    local USERNAME="$1"
 
     print_in_purple "\n   npm\n\n"
 

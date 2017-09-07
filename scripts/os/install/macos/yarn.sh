@@ -26,7 +26,6 @@ install_yarn_packages() {
 install_yarn_package() {
 
     declare -r CMD="global"
-    declare -r PACKAGE_NAME="global add"
     declare -r YARN_PACKAGE="$1"
 
 
@@ -39,7 +38,7 @@ install_yarn_package() {
         return 1
     fi
 
-    execute "yarn $CMD add $YARN_PACKAGE $PACKAGE_NAME"
+    execute "yarn $CMD add $YARN_PACKAGE"
 
 }
 
