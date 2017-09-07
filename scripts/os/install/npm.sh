@@ -34,7 +34,7 @@ main() {
     install_npm_package "Trash-cli" "trash-cli"
 
     print_in_purple "\n   Configurando o npm\n\n"
-    
+
     execute "npm add user '$USERNAME'" \
         "Adicionando '$USERNAME'"
 

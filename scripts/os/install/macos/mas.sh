@@ -30,7 +30,7 @@ upgrade_mas_apps() {
 
 install_mas_apps() {
 
-    print_in_purple "\n** Instalando Apps da App Store\n\n"
+    print_in_purple "\n   >>> Instalando Apps da App Store\n\n"
 
     execute "mas install 443987910	" "1Password (6.8.1)"
     execute "mas install 918858936	" "Airmail 3 (3.3.2)"
