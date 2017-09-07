@@ -12,7 +12,7 @@ login_to_app_store() {
 
     ask "Entre com seu Apple ID: " && printf "\n"
 
-    execute "mas signin $(get_answer)"
+    execute "mas signin '$(get_answer)'"
 
 }
 
@@ -21,6 +21,11 @@ install_mas() {
     print_in_purple "\n   Instalando o MAS\n\n"
     brew_install "Mac App Store CLI" "mas"
 
+}
+
+upgrade_mas_apps() {
+
+    execute "mas upgrade" "Atualizando Apps"
 }
 
 install_mas_apps() {
@@ -85,6 +90,7 @@ main() {
 
     install_mas
     login_to_app_store
+    upgrade_mas_apps
     install_mas_apps
 
 }

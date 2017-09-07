@@ -116,9 +116,9 @@ execute "code --install-extension michelemelluso.code-beautifier"  \
 execute "code --install-extension michelemelluso.gitignore"  \
 	".gitignore Again"
 execute "code --install-extension mkaufman.HTMLHint"  \
-	" ** Comment ** "
-execute "code --install-extension ms-mssql.mssql"  \
 	"HTML Hint"
+execute "code --install-extension ms-mssql.mssql"  \
+	"Suporte a MS SQL"
 execute "code --install-extension ms-vscode.csharp"  \
 	"Suporte ao C#"
 execute "code --install-extension ms-vscode.mono-debug"  \
@@ -138,7 +138,7 @@ execute "code --install-extension rebornix.Ruby"  \
 execute "code --install-extension rogalmic.bash-debug"  \
 	"Bash Debug"
 execute "code --install-extension samschneller.git-add-remote"  \
-	" ** Comment ** "
+	"Git Add Remote"
 execute "code --install-extension samschneller.git-pull-upstream"  \
 	"Git Pull Upstream"
 execute "code --install-extension shaharkazaz.git-merger"  \
@@ -168,7 +168,7 @@ execute "code --install-extension xabikos.JavaScriptSnippets"  \
 execute "code --install-extension ziyasal.vscode-open-in-github" \
     "Open in GitHub"
 
-execute "code --install-extension danwahlin.angular2-snippets" \
-    "Angular 4 and TypeScript/HTML Code Snippets"
+# execute "code --install-extension danwahlin.angular2-snippets" \
+#     "Angular 4 and TypeScript/HTML Code Snippets"
 
 
