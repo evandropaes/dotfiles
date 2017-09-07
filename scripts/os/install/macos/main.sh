@@ -6,6 +6,10 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+declare -r HOSTNAME="$1"
+declare -r USERNAME="$2"
+declare -r EMAIL="$3"
+
 
 ./xcode.sh
 
@@ -24,7 +28,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 ./jetbrains.sh
 ./misc.sh
 ./misc_tools.sh
-./../npm.sh
+./../npm.sh "$USERNAME"
 ./yarn.sh
 ./tmux.sh
 ./video_tools.sh

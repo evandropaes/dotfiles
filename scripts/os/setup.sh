@@ -276,7 +276,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    ./install/main.sh
+    ./install/main.sh "$HOSTNAME" "$USERNAME" "$EMAIL"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
