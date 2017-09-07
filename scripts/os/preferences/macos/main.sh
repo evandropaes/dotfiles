@@ -18,7 +18,7 @@ declare -r EMAIL="$3"
 
 ./app_store.sh
 ./chrome.sh
-# ./dashboard.sh
+./dashboard.sh
 ./dock.sh
 ./finder.sh
 ./firefox.sh

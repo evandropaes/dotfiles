@@ -30,6 +30,12 @@ initialize_git_repository() {
             "git init && git remote add origin $GIT_ORIGIN" \
             "Inicializando o repositório do Git"
 
+        execute "git config --global user.name '$USERNAME'" \
+            "Adicionando o usuário '$USERNAME'" 
+
+        execute "git config --global user.email '$EMAIL'" \
+            "Adicionando o e-mail '$EMAIL'" 
+
     fi
 
 }

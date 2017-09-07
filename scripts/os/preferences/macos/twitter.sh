@@ -24,7 +24,7 @@ execute "defaults write com.twitter.twitter-mac openLinksInBackground -bool true
     "Open links in the background"
  
 execute "defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true" \
-    "Allow closing the ‘new tweet’ window by pressing `Esc`"
+    "Allow closing the ‘new tweet’ window by pressing 'Esc'"
  
 execute "defaults write com.twitter.twitter-mac ShowFullNames -bool true" \
     "Show full names rather than Twitter handles"

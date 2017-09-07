@@ -42,7 +42,7 @@ install_latest_stable_node() {
     execute \
         ". $LOCAL_SHELL_CONFIG_FILE \
             && nvm install node" \
-        "nvm (install latest Node)"
+        "nvm (install última versão do Node)"
 }
 
 install_nvm() {

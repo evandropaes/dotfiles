@@ -154,6 +154,29 @@ get_os_version() {
 
 }
 
+is_app_installed()
+{
+  local appNameOrBundleId=$1 
+  local isAppName=0 
+  local bundleId
+  
+  # Determine whether an app *name* or *bundle ID* was specified.
+  [[ $appNameOrBundleId =~ \.[aA][pP][pP]$ || $appNameOrBundleId =~ ^[^.]+$ ]] && isAppName=1
+  
+  if (( isAppName )); then # an application NAME was specified
+    # Translate to a bundle ID first.
+    bundleId=$(osascript -e "id of application \"$appNameOrBundleId\"") >/dev/null ||
+      { return 1; }
+  else # a BUNDLE ID was specified
+    bundleId=$appNameOrBundleId
+  fi
+  
+  # Let AppleScript determine the full bundle path.
+  osascript -e "tell application \"Finder\" to POSIX path of (get application file id \"$bundleId\" as alias)" >/dev/null ||
+    { return 1; }
+
+}
+
 is_git_repository() {
     git rev-parse &> /dev/null
 }

@@ -18,6 +18,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 ./git.sh
 ./gpg.sh
 ./image_tools.sh
+./jetbrains.sh
 ./misc.sh
 ./misc_tools.sh
 ./../npm.sh

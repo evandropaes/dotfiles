@@ -13,9 +13,9 @@ declare skipQuestions=false
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-declare -r HOSTNAME; HOSTNAME=$(hostname) 
-declare -r USERNAME="$1"
-declare -r EMAIL="$2"
+declare -r HOSTNAME="$1"
+declare -r USERNAME="$2"
+declare -r EMAIL="$3"
 
 # ----------------------------------------------------------------------
 # | Helper Functions                                                   |
@@ -208,8 +208,16 @@ verify_os() {
 
 main() {
 
-    # Ensure that the following actions
-    # are made relative to this file's path.
+    if [ "$#" -ne 3 ]; then
+        printf "\n\nUso correto: sh ./setup.sh <hostname> <nomeusuario> <email>\n\n"
+        exit 1
+    fi
+
+    if ! [[ "$EMAIL" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$ ]]
+    then
+        printf "\ne-Mail inválido.\n\n"
+        exit 1
+    fi
 
     cd "$(dirname "${BASH_SOURCE[0]}")" \
         || exit 1
@@ -223,6 +231,10 @@ main() {
     else
         download_utils || exit 1
     fi
+    
+    print_in_yellow "\n\n   >>> Executando set up para usuário '$USERNAME' ('$EMAIL') no host '$HOSTNAME'\n"
+    print_in_yellow "   ----\n\n"
+    # Ensure that the following actions
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -293,5 +305,6 @@ main() {
     fi
 
 }
+
 
 main "$@"

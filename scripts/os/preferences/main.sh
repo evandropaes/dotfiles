@@ -10,4 +10,4 @@ declare -r EMAIL="$3"
 
 print_in_purple "\n >> Preferências...\n"
 
-"./$(get_os)/main.sh '$HOSTNAME' '$USERNAME' '$EMAIL'"
+"./$(get_os)/main.sh" "$HOSTNAME" "$USERNAME" "$EMAIL"
