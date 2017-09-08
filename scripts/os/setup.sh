@@ -209,7 +209,7 @@ verify_os() {
 main() {
 
     if [ "$#" -ne 3 ]; then
-        printf "\n\nUso correto: sh ./setup.sh <hostname> <nomeusuario> <email>\n\n"
+        print_in_red "\n\nUso correto: sh ./setup.sh <hostname> <nomeusuario> <email>\n\n"
         exit 1
     fi
 

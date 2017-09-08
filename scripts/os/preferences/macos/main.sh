@@ -7,6 +7,11 @@ declare -r HOSTNAME="$1"
 declare -r USERNAME="$2"
 declare -r EMAIL="$3"
 
+print_in_yellow "\n\n"
+print_in_yellow "   ------------------------------------------------------\n"
+print_in_yellow "   Configurando as preferências no sistema e nas apps\n"
+print_in_yellow "   ------------------------------------------------------\n\n"
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Close any open `System Preferences` panes in order to
@@ -33,4 +38,4 @@ declare -r EMAIL="$3"
 ./trackpad.sh
 ./transmission.sh
 ./twitter.sh
-./ui_and_ux.sh "$HOSTNAME" 
+./ui_and_ux.sh "$HOSTNAME"
