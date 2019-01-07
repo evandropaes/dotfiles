@@ -36,10 +36,9 @@ main() {
     install_npm_package "Trash-cli" "trash-cli"
     install_npm_package "Angular CLI" "@angular/cli"
 
-    print_in_purple "\n   Configurando o npm\n\n"
+    # print_in_purple "\n   Configurando o npm\n\n"
 
-    execute "npm add user '$USERNAME'" \
-        "Adicionando '$USERNAME'"
+    # execute "npm add user '$USERNAME'" "Adicionando '$USERNAME'"
 
 
 

@@ -53,7 +53,6 @@ install_mas_apps() {
     execute "mas install 1147396723 " "WhatsApp Desktop (0.3.1850)"
     execute "mas install 803453959  " "Slack (3.3.3)"
     execute "mas install 823766827  " "OneDrive (18.214.1021)"
-    execute "mas install 405843582  " "Alfred (1.2)"
     execute "mas install 406056744  " "Evernote (7.7)"
     execute "mas install 1278508951 " "Trello (2.10.8)"
 }
