@@ -10,7 +10,7 @@ print_in_purple "\n   Ferramentas Extras\n\n"
 
 brew_install "Disk Inventory" "disk-inventory-x" "caskroom/cask" "cask"
 brew_install "VLC" "vlc" "caskroom/cask" "cask"
-brew_install "GPG Tools" "gpgtools" "caskroom/cask" "cask"
+# brew_install "GPG Tools" "gpgtools" "caskroom/cask" "cask"
 brew_install "Licecap" "licecap" "caskroom/cask" "cask"
 brew_install "Alfred" "alfred" "caskroom/cask" "cask"
 brew_install "Skype" "skype" "caskroom/cask" "cask"
