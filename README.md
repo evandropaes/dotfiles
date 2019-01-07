@@ -1,8 +1,8 @@
-**Work-In-Progress (Beta)** 
+**Work-In-Progress (Beta, 2019)** 
 
-# Evandro Reis (RedPill.digital) Dotfiles (macOS) [![Build Status](https://travis-ci.org/evandropaes/dotfiles.svg?branch=master)](https://travis-ci.org/evandropaes/dotfiles)
+# Evandro Reis Dotfiles (macOS) [![Build Status](https://travis-ci.org/evandropaes/dotfiles.svg?branch=master)](https://travis-ci.org/evandropaes/dotfiles)
 
-Antes de mais nada, aqui ficam meus agradecimentos ao [Victor Cavalcante](https://github.com/vcavalcante/) (grande amigo da Lambda3) que apresentou-me o conceito de Dotfiles e indicou-me seu tutorial. Valeu, brother. Agradecimentos também ao [Cătălin Mariș](https://github.com/alrra) pelos scrips e complementos. Estou baseando muito das configurações que seguem aqui no trabalho inicial dele. 
+Antes de mais nada, aqui ficam meus agradecimentos ao [Victor Cavalcante](https://github.com/vcavalcante/) (grande amigo da Lambda3) que apresentou-me o conceito de Dotfiles e indicou-me seu tutorial. Valeu, brother. Agradecimentos também ao [Cătălin Mariș](https://github.com/alrra) pelos scrips e complementos. Estou baseando as configurações que seguem aqui no trabalho inicial deles. 
 
 :warning: **AVISO:** Se você quiser usar esses dotfiles e scripts de configuração, primeiro faça um fork com o comando abaixo. **NÃO** os use sem saber o que está fazendo.  
 
@@ -44,7 +44,7 @@ Não tente usar cegamente as configurações se você não sabe o que está faze
 
 Os arquivos locais (.local) servem para você alterar as configurações sem precisar mexer no core dos Dotfiles.
 
-Fique à vontade em mandar sugestões, correções e esculachos, mas só vou aceitar os não ofensivos e os pull requests se realmente tiver valor. 
+Fique à vontade em mandar sugestões, correções e esculachos, mas só vou aceitar os não ofensivos e os pull requests se realmente tiverem valor. 
 
 # Setup
 #### Instalação e uso
@@ -57,9 +57,9 @@ Fique à vontade em mandar sugestões, correções e esculachos, mas só vou ace
 
 ## O que são os Dotfiles?
 
-Dotfiles nada mais são do que arquivos que começam com ".", por isso o nome, a maioria dos software no macOS e no Linux guardam suas configurações em arquivos e por convenção começam com "." (esses arquivos são ocultos).
+Dotfiles nada mais são do que arquivos que começam com ".", por isso o nome. A maioria dos software no macOS e no Linux guardam suas configurações em arquivos e por convenção começam com "." (esses arquivos são ocultos).
 
-A ideia é que você possa guardar esses arquivos e restaurar na sua nova máquina e vai ter de volta as configurações que você já estava acostumado, mas os Dotfiles sozinhos não fazem mágica, por isso escrevi esse manual. Além deles vamos usar scripts shell para automatizar algumas coisas, brew para instalar software, e outras coisinhas a mais.
+A ideia é que você possa guardar esses arquivos, restaurar na sua nova máquina e ter de volta as configurações que você já estava acostumado. Mas os Dotfiles sozinhos não fazem mágica, por isso escrevi esse manual. Além deles vamos usar scripts shell para automatizar algumas coisas, tais como o brew para instalar software, e outras coisinhas a mais.
 
 # macOS
 ## Passo-a-passo for newbies (macOS)
@@ -84,7 +84,7 @@ Garanta que tudo esteja atualizado.
 
 Vá até o [meu repositório Dotfiles](https://github.com/evandropaes/dotfiles) e fork para o seu github. Isso é muito importante, pois você irá fazer modificações nesses arquivos e a ideia é que você guarde no seu github para quando precisar recuperar.
 
-Clone o repositório para o direto ~/.dotfiles
+Clone o repositório para o diretório ~/.dotfiles
 
 ```sh
 git clone https://github.com/evandropaes/dotfiles.git ~/.dotfiles
@@ -109,7 +109,7 @@ O setup.sh irá:
 * [Symlink](scripts/os/create_symbolic_links.sh) the 
   [`git`](scripts/git),
   [`shell`](scripts/shell), and
-* Instalas as aplicações e ferramentos de linha de comando para 
+* Instalar as aplicações e ferramentass de linha de comando para 
   [`macOS`](scripts/os/install/macos) /
   [`Ubuntu`](scripts/os/install/ubuntu)
 * Redefinir as preferências

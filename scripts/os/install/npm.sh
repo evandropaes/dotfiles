@@ -33,6 +33,7 @@ main() {
     install_npm_package "Babel" "babel-cli"
     install_npm_package "JSHint" "jshint"
     install_npm_package "Trash-cli" "trash-cli"
+    install_npm_package "Angular CLI" "@angular/cli"
 
     print_in_purple "\n   Configurando o npm\n\n"
 

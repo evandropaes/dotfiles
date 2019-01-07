@@ -19,18 +19,15 @@ declare -r EMAIL="$3"
 ./mas.sh
 ./devtools.sh
 ./visualstudiocode.sh
+./office.sh
+./docker.sh
 ./dailytools.sh
 ./browsers.sh
-./compression_tools.sh
-./git.sh
 ./gpg.sh
-./image_tools.sh
 ./jetbrains.sh
 ./misc.sh
 ./misc_tools.sh
 ./../npm.sh "$USERNAME"
-./yarn.sh
-./tmux.sh
 ./video_tools.sh
 ./extratools.sh
 ./web_font_tools.sh

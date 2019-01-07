@@ -15,7 +15,9 @@ brew_install "Licecap" "licecap" "caskroom/cask" "cask"
 brew_install "Alfred" "alfred" "caskroom/cask" "cask"
 brew_install "Skype" "skype" "caskroom/cask" "cask"
 brew_install "Spotify" "spotify" "caskroom/cask" "cask"
-brew_install "LastPass" "lastpass" "caskroom/cask" "cask"
 brew_install "Caffeine" "caffeine" "caskroom/cask" "cask"
 brew_install "Dash" "dash" "caskroom/cask" "cask"
-brew_install "Evernote" "evernote" "caskroom/cask" "cask"
+brew_install "Adobe Creative Cloud" "adobe-creative-cloud" "caskroom/cask" "cask"
+brew_install "Amazon Drive" "amazon-drive" "caskroom/cask" "cask"
+
+

@@ -39,7 +39,7 @@ create_gitconfig_local() {
 [user]
 
     name = Evandro Paes
-    email = evandro.reis@redpill.digital
+    email = evandro.reis@rarvos.com
     # signingkey = VtuYGUuAQRmvIIhHiY3WOwOCNbA/YSUJpkxSTlKzIY" \
         >> "$FILE_PATH"
     fi
