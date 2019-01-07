@@ -37,5 +37,5 @@ print_in_yellow "   ------------------------------------------------------\n\n"
 ./textedit.sh
 ./trackpad.sh
 ./transmission.sh
-./twitter.sh
+# ./twitter.sh
 ./ui_and_ux.sh "$HOSTNAME"
