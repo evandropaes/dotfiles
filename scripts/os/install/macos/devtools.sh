@@ -14,7 +14,5 @@ brew_install "ImageAlpha" "imagealpha" "caskroom/cask" "cask"
 brew_install "Image Optimization" "imageoptim" "caskroom/cask" "cask"
 brew_install "Source Tree" "sourcetree" "caskroom/cask" "cask"
 brew_install ".NET" "dotnet" "caskroom/cask" "cask"
-brew_install "Docker Toolbox" "docker-toolbox" "caskroom/cask" "cask"
-brew_install "Parallels Desktop" "parallels-desktop" "caskroom/cask" "cask"
 brew_install "Android Studio" "android-studio" "caskroom/cask" "cask"
 
