@@ -79,8 +79,17 @@ Garanta que tudo esteja atualizado.
 ```sh
   xcode-select --install
 ```
+### 3. Instale o Visual Studio Code (ou outro editor de seu gosto)
 
-### 3. Clone o repositório Git
+Vá até o site do [Visual Studio Code](https://code.visualstudio.com/download) e clique no link correspondente (no caso macOS).  
+
+Ou clique no link abaixo.
+
+```sh
+https://go.microsoft.com/fwlink/?LinkID=620882
+```
+
+### 4. Clone o repositório Git
 
 Vá até o [meu repositório Dotfiles](https://github.com/evandropaes/dotfiles) e fork para o seu github. Isso é muito importante, pois você irá fazer modificações nesses arquivos e a ideia é que você guarde no seu github para quando precisar recuperar.
 
@@ -90,7 +99,7 @@ Clone o repositório para o diretório ~/.dotfiles
 git clone https://github.com/evandropaes/dotfiles.git ~/.dotfiles
 ```
 
-### 4. Executando o setup.sh
+### 5. Executando o setup.sh
 
 Para configurar os `Dotfiles`, execute o snippet apropriado no terminal:
 
