@@ -16,8 +16,8 @@ declare -r EMAIL="$3"
 ./homebrew.sh
 ./bash.sh
 ./../nvm.sh
-./mas.sh
 ./devtools.sh
+./databasetools.sh
 ./visualstudiocode.sh
 ./office.sh
 ./docker.sh
@@ -30,5 +30,6 @@ declare -r EMAIL="$3"
 ./../npm.sh "$USERNAME"
 ./video_tools.sh
 ./extratools.sh
+./mas.sh
 ./web_font_tools.sh
 ./cleanup.sh

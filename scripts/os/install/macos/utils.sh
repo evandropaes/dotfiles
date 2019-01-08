@@ -14,9 +14,6 @@ brew_cleanup() {
     # https://github.com/Homebrew/brew/blob/496fff643f352b0943095e2b96dbc5e0f565db61/share/doc/homebrew/FAQ.md#how-do-i-uninstall-old-versions-of-a-formula
 
     execute "brew cleanup" "Homebrew (cleanup)"
-
-    execute "brew cask cleanup" "Homebrew (cask cleanup)"
-
 }
 
 brew_install() {

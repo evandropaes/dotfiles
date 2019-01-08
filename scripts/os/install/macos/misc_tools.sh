@@ -9,4 +9,4 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 print_in_purple "\n   Mais miscelânea\n\n"
 
 brew_install "ShellCheck" "shellcheck"
-
+brew_install "Google Drive File Stream" "google-drive-file-stream" "caskroom/cask" "cask"
