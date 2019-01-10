@@ -55,6 +55,7 @@ install_mas_apps() {
     execute "mas install 823766827  " "OneDrive (18.214.1021)"
     execute "mas install 406056744  " "Evernote (7.7)"
     execute "mas install 1278508951 " "Trello (2.10.8)"
+    execute "mas install 837352001  " "Maxel (2.4.1)"
 }
 
 main() {
