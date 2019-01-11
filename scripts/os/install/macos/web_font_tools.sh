@@ -15,4 +15,11 @@ brew_install "Web Font Tools: WOFF2" "woff2" "bramstein/webfonttools"
 
 print_in_purple "\n   Instalando fonts\n\n"
 
-cp ./fonts/* /Library/Fonts
+print_in_yellow "\n   Instalando .TTF fonts\n"
+cp -R ./fonts/*.ttf /Library/Fonts
+
+print_in_yellow "\n   Instalando .OTF fonts\n"
+cp -R ./fonts/*.otf /Library/Fonts
+
+print_in_yellow "\n   Instalando .WOFF fonts\n"
+cp -R ./fonts/*.woff /Library/Fonts
