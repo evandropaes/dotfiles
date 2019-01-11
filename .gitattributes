@@ -2,3 +2,9 @@
 # https://git-scm.com/docs/gitattributes#_end_of_line_conversion
 
 * text=auto
+
+*.eot binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+
