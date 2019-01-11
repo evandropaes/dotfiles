@@ -1,153 +1,234 @@
-[alias]
-
-    a   = commit --amend
-    br  = branch
-    c   = commit
-    ca  = !git add -A && git commit             # Commit all changes.
-    co  = checkout
-    cp  = cherry-pick
-    d   = diff
-    dc  = diff --cached
-    f   = fetch
-    g   = log --graph --pretty=custom           # Show custom graph.
-    l   = log --pretty=custom                   # Show custom log.
-    lc  = shortlog --email --numbered --summary # List contributors.
-    p   = push
-    r   = rebase
-    rlc = reset --hard HEAD~1                   # Remove last commit.
-    s   = status
-    ulc = reset --soft HEAD~1                   # Undo last commit.
-    w   = instaweb --httpd=webrick              # Start web-based visualizer.
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Find commits by source code.
-
-    cc = "!f() { \
-        git log --pretty=custom --decorate --date=short -S\"$1\"; \
-    }; f"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Find commits by commit message.
-
-    cm = "!f() { \
-        git log --pretty=custom --decorate --date=short --grep=\"$1\"; \
-    }; f"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Credit an author on the latest commit.
-
-    credit = "!f() { \
-        if [ -n \"$1\" ] && [ -n \"$2\" ]; then \
-            git commit --amend --author \"$1 <$2>\" -C HEAD; \
-        fi \
-    }; f"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # List remote branches.
-
-    lrb = "!f() { \
-        remote="${1:-origin}"; \
-        git ls-remote --heads "$remote"; \
-    }; f"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Merge GitHub pull request on top of the current branch or,
-    # if a branch name is specified, on top of the specified branch.
-
-    mpr = "!f() { \
-        declare currentBranch=\"$(git symbolic-ref --short HEAD)\"; \
-        declare branch=\"${2:-$currentBranch}\"; \
-        if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
-            git fetch origin refs/pull/$1/head:pr/$1 && \
-            git checkout -B $branch && \
-            git rebase $branch pr/$1 && \
-            git checkout -B $branch && \
-            git merge pr/$1 && \
-            git branch -D pr/$1 && \
-            git commit --amend -m \"$(git log -1 --pretty=%B)\n\nClose #$1\"; \
-        fi \
-    }; f"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Remove the tag with the specified tag name if
-    # exists and tag the latest commit with that name.
-
-    retag = "!f() { \
-        git tag -d "$1" &> /dev/null; \
-        git tag $1; \
-    }; f"
-
-
-[color "branch"]
-
-    current = green bold
-    local = green
-    remote = yellow
-
-[color "diff"]
-
-    frag = magenta
-    meta = yellow
-    new = green
-    old = red
-
-[color "status"]
-
-    added = green reverse
-    changed = yellow reverse
-    untracked = red reverse
-
-[core]
-
-    abbrev = 12
-    attributesfile = ~/.gitattributes
-    autocrlf = input
-    editor = vim
-    excludesfile = ~/.gitignore
-
-[diff "bin"]
-
-    # Use `hexdump` to diff binary files.
-
-    textconv = hexdump -v -C
-
-[pretty]
-
-    custom = "%C(magenta)%h%C(red)%d %C(yellow)%ar %C(green)%s %C(yellow)(%an)"
-    #                     │        │            │            │             └─ author name
-    #                     │        │            │            └─ message
-    #                     │        │            └─ date (relative)
-    #                     │        └─ decorations (branch, heads or tags)
-    #                     └─ hash (abbreviated)
-
-
-[push]
-
-    # Make `git push` automatically push relevant
-    # annotated tags when pushing branches out.
-
-    followTags = true
-
 [user]
-
-    # Don't guess the user's identity.
-    # https://github.com/git/git/blob/90f7b16b3adc78d4bbabbd426fb69aa78c714f71/Documentation/config.txt#L2847-L2855
-
-    useConfigOnly = true
-
-[include]
-
-    # Load local configs.
-    # https://git-scm.com/docs/git-config#_includes
-    #
-    # [!] The following needs to remain at the end of this file in
-    #     order to allow any of the above configs to be overwritten
-    #     by the local ones
-
-    path = ~/.gitconfig.local
+	name = Evandro Reis
+	email = evandro.reis@arvos.com
+	username = evandropaes
+[core]
+	editor = code
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore
+[web]
+	browser = google-chrome
+[push]
+	default = matching
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[github]
+	user = evandropaes
+	token = token
+[gitflow "prefix"]
+	feature = feature-
+	release = release-
+	hotfix = hotfix-
+	support = support-
+	versiontag = v
+[alias]
+	a = add --all
+	ai = add -i
+	#############
+	ap = apply
+	as = apply --stat
+	ac = apply --check
+	#############
+	ama = am --abort
+	amr = am --resolved
+	ams = am --skip
+	#############
+	b = branch
+	ba = branch -a
+	bd = branch -d
+	bdd = branch -D
+	br = branch -r
+	bc = rev-parse --abbrev-ref HEAD
+	bu = !git rev-parse --abbrev-ref --symbolic-full-name "@{u}"
+	#############
+	c = commit
+	ca = commit -a
+	cm = commit -m
+	cam = commit -am
+	cem = commit --allow-empty -m
+	cd = commit --amend
+	cad = commit -a --amend
+	ced = commit --allow-empty --amend
+	#############
+	cl = clone
+	cld = clone --depth 1
+	clg = !sh -c 'git clone git://github.com/$1 $(basename $1)' -
+	clgp = !sh -c 'git clone git@github.com:$(git config --get user.username)/$1 $1' -
+	#############
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+	#############
+	d = diff
+	dp = diff --patience
+	dc = diff --cached
+	dk = diff --check
+	dck = diff --cached --check
+	dt = difftool
+	dct = difftool --cached
+	#############
+	f = fetch
+	fo = fetch origin
+	fu = fetch upstream
+	#############
+	fp = format-patch
+	#############
+	fk = fsck
+	#############
+	g = grep -p
+	#############
+	l = log --oneline
+	lg = log --oneline --graph --decorate
+	#############
+	ls = ls-files
+	lsf = !git ls-files | grep -i
+	#############
+	m = merge
+	ma = merge --abort
+	mc = merge --continue
+	ms = merge --skip
+	#############
+	o = checkout
+	ob = checkout -b
+	#############
+	pr = prune -v
+	#############
+	ps = push
+	psf = push -f
+	psu = push -u
+	pst = push --tags
+	#############
+	pso = push origin
+	psao = push --all origin
+	psfo = push -f origin
+	psuo = push -u origin
+	#############
+	psom = push origin master
+	psaom = push --all origin master
+	psfom = push -f origin master
+	psuom = push -u origin master
+	psoc = !git push origin $(git bc)
+	psaoc = !git push --all origin $(git bc)
+	psfoc = !git push -f origin $(git bc)
+	psuoc = !git push -u origin $(git bc)
+	psdc = !git push origin :$(git bc)
+	#############
+	pl = pull
+	pb = pull --rebase
+	#############
+	plo = pull origin
+	pbo = pull --rebase origin
+	plom = pull origin master
+	ploc = !git pull origin $(git bc)
+	pbom = pull --rebase origin master
+	pboc = !git pull --rebase origin $(git bc)
+	#############
+	plu = pull upstream
+	plum = pull upstream master
+	pluc = !git pull upstream $(git bc)
+	pbum = pull --rebase upstream master
+	pbuc = !git pull --rebase upstream $(git bc)
+	#############
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase --interactive
+	rbs = rebase --skip
+	#############
+	re = reset
+	rh = reset HEAD
+	reh = reset --hard
+	rem = reset --mixed
+	res = reset --soft
+	rehh = reset --hard HEAD
+	remh = reset --mixed HEAD
+	resh = reset --soft HEAD
+	#############
+	r = remote
+	ra = remote add
+	rr = remote rm
+	rv = remote -v
+	rn = remote rename
+	rp = remote prune
+	rs = remote show
+	rao = remote add origin
+	rau = remote add upstream
+	rro = remote remove origin
+	rru = remote remove upstream
+	rso = remote show origin
+	rsu = remote show upstream
+	rpo = remote prune origin
+	rpu = remote prune upstream
+	#############
+	rmf = rm -f
+	rmrf = rm -r -f
+	#############
+	s = status
+	sb = status -s -b
+	#############
+	sa = stash apply
+	sc = stash clear
+	sd = stash drop
+	sl = stash list
+	sp = stash pop
+	ss = stash save
+	ssk = stash save -k
+	sw = stash show
+	st = !git stash list | wc -l 2>/dev/null | grep -oEi '[0-9][0-9]*'
+	#############
+	t = tag
+	td = tag -d
+	#############
+	w = show
+	wp = show -p
+	wr = show -p --no-color
+	#############
+	svnr = svn rebase
+	svnd = svn dcommit
+	svnl = svn log --oneline --show-commit
+	#############
+	subadd = !sh -c 'git submodule add git://github.com/$1 $2/$(basename $1)' -
+	subup = submodule update --init --recursive
+	subpull = !git submodule foreach git pull --tags origin master
+	#############
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = !git ls -v | grep ^h | cut -c 3-
+	unassumeall = !git assumed | xargs git unassume
+	assumeall = !git status -s | awk {'print $2'} | xargs git assume
+	#############
+	bump = !sh -c 'git commit -am \"Version bump v$1\" && git psuoc && git release $1' -
+	release = !sh -c 'git tag v$1 && git pst' -
+	unrelease = !sh -c 'git tag -d v$1 && git pso :v$1' -
+	merged = !sh -c 'git o master && git plom && git bd $1 && git rpo' -
+	aliases = !git config -l | grep alias | cut -c 7-
+	snap = !git stash save 'snapshot: $(date)' && git stash apply 'stash@{0}'
+	bare = !sh -c 'git symbolic-ref HEAD refs/heads/$1 && git rm --cached -r . && git clean -xfd' -
+	whois = !sh -c 'git log -i -1 --author=\"$1\" --pretty=\"format:%an <%ae>\"' -
+	serve = daemon --reuseaddr --verbose --base-path=. --export-all ./.git
+	#############
+	behind = !git rev-list --left-only --count $(git bu)...HEAD
+	ahead = !git rev-list --right-only --count $(git bu)...HEAD
+	#############
+	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
+	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+	subrepo = !sh -c 'git filter-branch --prune-empty --subdirectory-filter $1 master' -
+	human = name-rev --name-only --refs=refs/heads/*
