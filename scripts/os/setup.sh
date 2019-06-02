@@ -1,5 +1,9 @@
 #!/bin/bash
 
+
+cd "$(dirname "${BASH_SOURCE[0]}")" \
+    && . "utils.sh"
+
 declare -r GITHUB_REPOSITORY="evandropaes/dotfiles"
 
 declare -r DOTFILES_ORIGIN="git@github.com:$GITHUB_REPOSITORY.git"
