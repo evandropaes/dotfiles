@@ -11,11 +11,19 @@ print_in_purple "\n   Ferramentas Extras\n\n"
 brew_install "1Clipboard" "1Clipboard" "caskroom/cask" "cask"
 brew_install "Adobe Creative Cloud" "adobe-creative-cloud" "caskroom/cask" "cask"
 brew_install "Alfred" "alfred" "caskroom/cask" "cask"
+<<<<<<< HEAD
+=======
+brew_install "Amazon Drive" "amazon-drive" "caskroom/cask" "cask"
+>>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 brew_install "Caffeine" "caffeine" "caskroom/cask" "cask"
 brew_install "CleanMyMac" "cleanmymac" "caskroom/cask" "cask"
 brew_install "Dash" "dash" "caskroom/cask" "cask"
 brew_install "Disk Inventory" "disk-inventory-x" "caskroom/cask" "cask"
 brew_install "Flinto" "flinto" "caskroom/cask" "cask"
+<<<<<<< HEAD
+=======
+brew_install "Ganache" "ganache" "caskroom/cask" "cask"
+>>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 brew_install "GoodSync" "goodsync" "caskroom/cask" "cask"
 brew_install "GPG Suite" "gpg-suite" "caskroom/cask" "cask"
 brew_install "Licecap" "licecap" "caskroom/cask" "cask"

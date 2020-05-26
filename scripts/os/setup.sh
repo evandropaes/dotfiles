@@ -20,7 +20,10 @@ declare skipQuestions=false
 declare -r HOSTNAME="$1"
 declare -r USERNAME="$2"
 declare -r EMAIL="$3"
+<<<<<<< HEAD
 declare -r DIRECTORY="$4"
+=======
+>>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 
 # ----------------------------------------------------------------------
 # | Helper Functions                                                   |
@@ -219,6 +222,7 @@ main() {
         print_in_yellow "      <nomeusuario> é o nome do usuário local da máquina.\n"
         print_in_yellow "      <email> é o e-mail usado na Apple Store.\n"
         print_in_yellow "      <diretorio> onde os symlinks serão feitos (default: ~/Personalize/.\n"
+
         exit 1
     fi
 

@@ -3,9 +3,12 @@
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "utils.sh"
 
+<<<<<<< HEAD
 
 declare -r DIRECTORY="$4"
 
+=======
+>>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 create_symlinks() {
@@ -47,7 +50,11 @@ create_symlinks() {
     for i in "${FILES_TO_SYMLINK[@]}"; do
 
         sourceFile="$(cd .. && pwd)/$i"
+<<<<<<< HEAD
         targetFile="$DIRECTORY/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
+=======
+        targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
+>>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 
         if [ ! -e "$targetFile" ] || $skipQuestions; then
 
