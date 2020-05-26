@@ -1,4 +1,4 @@
-**Work-In-Progress (Beta, 2019)** 
+**Work-In-Progress (Beta, 2020. Adicionado suporte ao Catalina)** 
 
 # Evandro Reis Dotfiles (macOS) [![Build Status](https://travis-ci.org/evandropaes/dotfiles.svg?branch=master)](https://travis-ci.org/evandropaes/dotfiles)
 
@@ -41,15 +41,10 @@ E revise os parâmetros das configurações (e suas preferências) em ~/scripts/
 | ui_and_ux.sh           | Preferências da interace do usuário |
  
 
-Não tente usar cegamente as configurações se você não sabe o que está fazendo. Use por sua conta e risco! É importante mudar alguns scripts para refletirem seu ambiente (como, por exemplo, seu username).
-
-Os arquivos locais (.local) servem para você alterar as configurações sem precisar mexer no core dos Dotfiles.
-
 Fique à vontade em mandar sugestões, correções e esculachos, mas só vou aceitar os não ofensivos e os pull requests se realmente tiverem valor. 
-
-# Setup
-#### Instalação e uso
-
+=======
+Fique à vontade em mandar sugestões, correções e esculachos, mas só vou aceitar os não ofensivos e os pull requests se realmente tiverem valor.
+## O que será instalado
 * Fork este repositório por sua conta e risco (que medo)
 * Clone o repositório
 * *Leia* com atenção os passos abaixo
