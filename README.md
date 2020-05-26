@@ -1,4 +1,4 @@
-**Work-In-Progress (Beta, 2019)** 
+**Work-In-Progress (Beta, 2020)** 
 
 # Evandro Reis Dotfiles (macOS) [![Build Status](https://travis-ci.org/evandropaes/dotfiles.svg?branch=master)](https://travis-ci.org/evandropaes/dotfiles)
 
@@ -29,26 +29,20 @@ E revise os parâmetros das configurações (e suas preferências) em ~/scripts/
 | finder.sh              | Preferências do Finder |
 | firefox.sh             | Preferências do Firefox |
 | keyboard.sh            | Preferências do Teclado |
-<<<<<<< HEAD
 | language_and_region.sh | Preferências de Lingua e Região |
 | maps.sh                | Preferências de Localização |
 | photos.sh              | Preferências de fotos |
 | safari.sh              | Preferências do Safari | 
-=======
 | language_and_region.sh | Preferências de Língua e Região |
 | maps.sh                | Preferências de Localização |
 | photos.sh              | Preferências de fotos |
 | safari.sh              | Preferências do Safari | 
 | spectacle.sh           | Preferências do Spectacle |     
->>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 | terminal.sh            | Preferências do Terminal | 
 | textedit.sh            | Preferências do TextEdit |
 | trackpad.sh            | Preferências do Trackpad |
 | transmission.sh        | Preferências do Transmission |
-<<<<<<< HEAD
-=======
 | twitter.sh             | Preferências do Twitter |
->>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 | ui_and_ux.sh           | Preferências da interace do usuário |
  
 
@@ -56,9 +50,6 @@ Não tente usar cegamente as configurações se você não sabe o que está faze
 
 Os arquivos locais (.local) servem para você alterar as configurações sem precisar mexer no core dos Dotfiles.
 
-<<<<<<< HEAD
-Fique à vontade em mandar sugestões, correções e esculachos, mas só vou aceitar os não ofensivos e os pull requests se realmente tiverem valor. 
-=======
 Fique à vontade em mandar sugestões, correções e esculachos, mas só vou aceitar os não ofensivos e os pull requests se realmente tiverem valor.
 
 ## O que será instalado
@@ -70,7 +61,7 @@ Os scripts irão instalar aplicações via Brew e também via Apple Store (aqui 
 | homebrew.sh | Brew |
 | nvm.sh | Node.js |
 | devtools.sh | Developer Tools, como Xamarin, Android Studio, .NET Core SDK, iTerm2, Unity e outros |
-| databasetools.sh | Suite Navicate, MongoDB, MySQL, Azure Data Studio e SQLite Studio |
+| databasetools.sh | MongoDB, MySQL, Azure Data Studio e SQLite Studio |
 | visualstudiocode.sh  | Visual Studio for Mac |
 | office.sh | Office 365, Teams e Zen Mind |
 | docker.sh | Docker Community Edition |
@@ -81,11 +72,9 @@ Os scripts irão instalar aplicações via Brew e também via Apple Store (aqui 
 | misc.sh | Android File Transfer, The Unarchiver e Transmission | 
 | misc_tools.sh | Miscelânias, como ShellCheck e Google Drive File Stream |
 | video_tools.sh | FFmpeg |
-| extratools.sh | 1Clipboard, Adobe Creative Cloud, Alfred, Amazon Drive, Caffeine, CleanMyMac, Dash, Disk Inventory, Flinto, Ganache, GoodSync, GPG Suite, Licecap, OmniGraffle, Skype, Spotify e VLC |
+| extratools.sh | 1Clipboard, Adobe Creative Cloud, Alfred, Caffeine, CleanMyMac, Dash, Disk Inventory, Flinto, Ganache, GoodSync, GPG Suite, Licecap, OmniGraffle, Skype, Spotify e VLC |
 | mas.sh | Apps da App Store |
-| web_font_tools.sh | Fontes <<*Atenção, são mais de 000 fontes*>> | 
-
->>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
+| web_font_tools.sh | Fontes <<*Atenção, são mais de 1000 fontes*>> | 
 
 # Setup
 #### Instalação e uso
@@ -94,13 +83,6 @@ Os scripts irão instalar aplicações via Brew e também via Apple Store (aqui 
 * Clone o repositório
 * *Leia* com atenção os passos abaixo
 * Be happy :)
-<<<<<<< HEAD
-* Don't blame me se algo der errado. 
-
-## O que são os Dotfiles?
-
-Dotfiles nada mais são do que arquivos que começam com ".", por isso o nome. A maioria dos software no macOS e no Linux guardam suas configurações em arquivos e por convenção começam com "." (esses arquivos são ocultos).
-=======
 * Don't _blame me_ se algo der errado. 
 
 ## O que são os Dotfiles?
@@ -128,10 +110,7 @@ Garanta que tudo esteja atualizado.
 ```sh
   xcode-select --install
 ```
-<<<<<<< HEAD
-=======
 
->>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 ### 3. Instale o Visual Studio Code (ou outro editor de seu gosto)
 
 Vá até o site do [Visual Studio Code](https://code.visualstudio.com/download) e clique no link correspondente (no caso macOS).  
@@ -144,9 +123,6 @@ https://go.microsoft.com/fwlink/?LinkID=620882
 
 ### 4. Clone o repositório Git
 
-<<<<<<< HEAD
-Vá até o [meu repositório Dotfiles](https://github.com/evandropaes/dotfiles) e fork para o seu github. Isso é muito importante, pois você irá fazer modificações nesses arquivos e a ideia é que você guarde no seu github para quando precisar recuperar.
-=======
 Vá até o [meu repositório Dotfiles](https://github.com/evandropaes/dotfiles) e faça fork para o seu github. Isso é muito importante, pois você irá fazer modificações nesses arquivos e a ideia é que você guarde no seu github para quando precisar recuperar.
 >>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 
@@ -165,17 +141,10 @@ Para configurar os `Dotfiles`, execute o snippet apropriado no terminal:
 | OS | Snippet |
 |:---|:--------|
 | `macOS` | `bash -c "$(curl -LsS https://raw.github.com/evandropaes/dotfiles/master/scripts/os/setup.sh)"` |
-<<<<<<< HEAD
- 
-Só isso! :sparkles:
-
-O setup.sh irá: 
-=======
 
 Só isso! :sparkles:
 
 O setup.sh irá:
->>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 
 * Fazer o download dos dotfiles no seu computador (default `~/Projects/Dotfiles`)
 * Criar os diretórios [directories](scripts/os/create_directories.sh)
@@ -183,17 +152,9 @@ O setup.sh irá:
   [`git`](scripts/git),
   [`shell`](scripts/shell), and
 * Instalar as aplicações e ferramentass de linha de comando para 
-<<<<<<< HEAD
-  [`macOS`](scripts/os/install/macos) /
-  [`Ubuntu`](scripts/os/install/ubuntu)
-* Redefinir as preferências
-  [`macOS`](scripts/os/preferences/macos) /
-  [`Ubuntu`](scripts/os/preferences/ubuntu) 
-=======
   [`macOS`](scripts/os/install/macos)
 * Redefinir as preferências
   [`macOS`](scripts/os/preferences/macos)  
->>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 
 ## Personalizando
 
@@ -250,11 +211,7 @@ __Nota:__ Use `~/.gitconfig.local` para armazenar informações confidenciais, c
 
 ### Forks
 
-<<<<<<< HEAD
-Se você decidir forkar este projeto, não se esqueça de substituir meu nome de usuário com o seu próprio no [`setup`](#setup) e no `setup` script.
-=======
 Se você decidir forkar este projeto, *NÃO SE ESQUEÇA DE SUBSTITUIR MEU NOME DE USUÁRIO COM O SEU PRÓPRIO* no [`setup`](#setup) e no `setup` script.
->>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 
 ## Atualizações
 
@@ -274,4 +231,3 @@ O código está disponível sob a [licença MIT](LICENSE.txt).
 ## Trabalhe feliz
 
 :)
->>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
