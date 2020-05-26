@@ -88,7 +88,6 @@ Os scripts irão instalar aplicações via Brew e também via Apple Store (aqui 
 ## O que são os Dotfiles?
 
 Dotfiles nada mais são do que arquivos que começam com "." (ponto), por isso o nome. A maioria dos software no macOS e no Linux guardam suas configurações em arquivos que por convenção começam com "." (esses arquivos são ocultos).
->>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 
 A ideia é que você possa guardar esses arquivos, restaurar na sua nova máquina e ter de volta as configurações que você já estava acostumado. Mas os Dotfiles sozinhos não fazem mágica, por isso escrevi esse manual. Além deles vamos usar scripts shell para automatizar algumas coisas, tais como o brew para instalar software, e outras coisinhas a mais.
 
@@ -124,7 +123,6 @@ https://go.microsoft.com/fwlink/?LinkID=620882
 ### 4. Clone o repositório Git
 
 Vá até o [meu repositório Dotfiles](https://github.com/evandropaes/dotfiles) e faça fork para o seu github. Isso é muito importante, pois você irá fazer modificações nesses arquivos e a ideia é que você guarde no seu github para quando precisar recuperar.
->>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 
 Clone o repositório para o diretório ~/.dotfiles
 
@@ -221,13 +219,6 @@ Para atualizar os dotfiles, você pode executar o script [`setup`](scripts/os/se
 
 O código está disponível sob a [licença MIT](LICENSE.txt).
 
-<<<<<<< HEAD
-## Trabalhe feliz!
-
-:)
-
-
-=======
 ## Trabalhe feliz
 
 :)
