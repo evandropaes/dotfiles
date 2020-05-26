@@ -30,34 +30,25 @@ brew_install() {
     if ! cmd_exists "brew"; then
         print_error "$FORMULA_READABLE_NAME ('Homebrew' não está instalado)."
         return 1
-    fi 
+    fi
 
-    
+
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # If `brew tap` needs to be executed,
     # check if it executed correctly.
 
-<<<<<<< HEAD
     # if [ -n "$TAP_VALUE" ]; then
     #   if ! brew_tap "$TAP_VALUE"; then
     #      print_error "$FORMULA_READABLE_NAME ('brew tap $TAP_VALUE' falhou)"
     #     return 1
     #   fi
     # fi
-=======
-    if [ -n "$TAP_VALUE" ]; then
-        if ! brew_tap "$TAP_VALUE"; then
-            print_error "$FORMULA_READABLE_NAME ('brew tap $TAP_VALUE' falhou)"
-            return 1
-        fi
-    fi
->>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Install the specified formula.
 
     # shellcheck disable=SC2086
-    
+
     if (brew $CMD list --versions "$FORMULA" &> /dev/null) || is_app_installed "$FORMULA_READABLE_NAME"; then
         print_success "$FORMULA_READABLE_NAME já está instalado."
     else

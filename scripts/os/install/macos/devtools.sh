@@ -21,10 +21,5 @@ brew_install "Unity" "unity" "caskroom/cask" "cask"
 brew_install "Xamarin for Mac" "xamarin-mac" "caskroom/cask" "cask"
 brew_install "Xamarin profiler" "xamarin-profiler" "caskroom/cask" "cask"
 brew_install "Xamarin Studio" "xamarin-studio" "caskroom/cask" "cask"
-<<<<<<< HEAD
-
-=======
-brew_install "Xamarin" "xamarin" "caskroom/cask" "cask"
->>>>>>> c2e89c931e3ce30ca60242d71a8160495a66fe67
 
 
