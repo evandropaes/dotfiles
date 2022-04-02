@@ -52,7 +52,7 @@ brew_install() {
     if (brew $CMD list --versions "$FORMULA" &> /dev/null) || is_app_installed "$FORMULA_READABLE_NAME"; then
         print_success "$FORMULA_READABLE_NAME já está instalado."
     else
-        execute "brew $CMD install $FORMULA" "$FORMULA_READABLE_NAME"
+        execute "brew install $FORMULA" "$FORMULA_READABLE_NAME" "--$CMD"
     fi
 
 }
