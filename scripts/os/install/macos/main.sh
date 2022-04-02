@@ -19,11 +19,11 @@ declare -r EMAIL="$3"
 ./devtools.sh
 ./databasetools.sh
 ./visualstudiocode.sh
-./office.sh
+#./office.sh
 ./docker.sh
 ./dailytools.sh
 ./browsers.sh
-./gpg.sh
+#./gpg.sh
 ./jetbrains.sh
 ./misc.sh
 ./misc_tools.sh
